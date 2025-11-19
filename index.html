@@ -10,10 +10,37 @@
         header { background: #0077cc;
         padding: 20px; color: whitesmoke;text-align: center;
         }
-        img { width: 80%;
-            border-radius: 10px;margin-top:20px ;
+        nav a { color:white; margin:15px;
+               font-size:18px;}
+         sectio { padding:20px;
+                 text-align:center; }
+             img { width:80%; 
+                  border-radius: 10px;margin-top:20px ;
+                 }
+        .according {
+            background-color: #0077cc;
+            color: white;
+            cursor: poiner;
+            padding: 15px;
+            width: 90%;
+            text-align:left;
+            font-size:18px;
+            border-radius:5px;
+            margin: 15px auto;
         }
-    </style>
+        .panel {
+            padding:18px;
+            background-color: white;
+            width:85%;
+            margin:5px auto;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #aaa;
+        }
+        .panel p, .panel li {
+            padding: 10px ;
+            text-align:left;
+        }
+ </style>
 </head>
 <body>
 <header>
@@ -35,6 +62,43 @@
          alt="NGO Image">
 </section>
 
+    <button class="according"> Mission</button>
+    <div class="panel">
+        <p> provide free quality education.</p>
+        <p>Support underprivileged children</p>
+        <p>Empower through lerarning</p>
+    </div>
+    <button class="according"> Vision</button>
+    <div class="panel">
+        <p>Build confident, skilled younge minds.</p>
+        <p>Transform society through education</p>
+    </div>
+    <button class="according"> Benefits</button> 
+    <div class="panel">
+        <ul>
+            <li>Free education programs</li>
+            <li>Skill development workshops</li>
+            <li>Study materials supports</li>
+            <li>Awareness & counseling sessions</li>
+        </ul>
+    </div>
+    <script>
+        const acc =
+            document.querySelectiorAll(".according");
+
+        acc.forEach(button => {
+            button.addEventListener(Click"'
+                function(){
+                const panel =
+                    this.nextElementSibling;
+                panel.style.display==="block") ?
+            "none" :"block";
+        });
+    </script>
+</body>
+</html>
+    </script>
+
 
 
 
@@ -44,4 +108,5 @@
 
 
 </body>
+
 </html>

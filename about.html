@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>About- Little Learners Trust</title>
+<style>
+    body { font-family: Arial;
+          padding:20px;
+          bachground: #0077cc;}
+    h1 { color:#0077cc;}
+    .according {
+        background-color: #0077cc;
+        color:white;
+        padding:15px;
+        cursor: pointer;
+        width:100px;
+        text-align:left;
+        font-size:18px;
+        border-radius:5px;
+        margin-top: 20px;
+    }
+    .panel {
+        padding: 18px;
+        background-color:white;
+        margin-top: 5px;
+        border-radius:5px;
+    }
+        
+</style>
+
+    
 </head>
 <body>
 <h1>About Little Learners Trust</h1>
 <p>Little Learners Trust is an NGO focused on providing education to children in need.</p>
-<a href="index.html"><- Back to Home </a>
+    <button class="according"> Mission(Lakshya)</button>
+    <div class="panel">
+        <p> Provide free and quality education</p>
+        <p>Support underprivileged children</p>
+        <p>Creat a bright futur through a learning.</p>
+        <p>
+    </div>
+    <a href="index.html"><- Back to Home </a>
+   <script>
+       const acc =
+           document.querySelector(".accordion");
+       const panel =
+           document.querySelector(".panel");
+       acc.addEventListener("Click", function(){
+           panel.style.display==="block"?});
+   </script>
+
+    
 </body>
+
 </html>

@@ -38,7 +38,17 @@
             border-radius: 7px;
             box-shadow: 0 0 5px #aaa;
      }
-       
+       body.dark {
+           background-color: #0d1b2a;
+           color:#e0e1dd;
+       }
+        body.dark header {
+            background-color: #005fa3;
+        }
+        body.dark a {
+            color: #ffffff:
+        }
+        
  </style>
 </head>
 <body>
@@ -51,6 +61,7 @@
     <a href="benefits.html">Benefits</a>
     <a href="contact.html">Contact Us</a>
     <a href="lion_history.html">Etc.</a>
+    <button id="darkToggle"></button>    
     <button onclick="alert('Hello this is Little Learners Trust, How may i help you?')" style="background-color: rebeccapurple;font-size: 40px;
 ">Click Me</button>
  </nav>
@@ -101,8 +112,18 @@
      <p>Builds a more educational support<br>
         that reduces financial stress or families.</p>
    </div>
-   <body>
+<script>
+      const btn = 
+        document.getElementById("darkToggle");
+
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+    });
+</script>
+    
+</body>
 </html>
+
 
 
 

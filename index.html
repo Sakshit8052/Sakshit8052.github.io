@@ -39,8 +39,8 @@
             box-shadow: 0 0 5px #aaa;
      }
        body.dark {
-           background-color: #0d1b2a;
-           color:#e0e1dd;
+           background-color: #121212;
+           color:white;
        }
         body.dark header {
             background-color: #005fa3;
@@ -113,16 +113,23 @@
         that reduces financial stress or families.</p>
    </div>
 <script>
-      const btn = 
-        document.getElementById("darkToggle");
+    function toggleMode() {
+document.body.classList.toggle("dark");
 
-    btn.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-    });
+  const btn =
+document.queryselector("btton");
+if(document.body.classList.contains("dark"))
+{
+btn.innerText = "Disable Dark Mode";
+} else {
+btn.innerText ="Enable Dark Mode";
+}
+}
 </script>
     
 </body>
 </html>
+
 
 
 

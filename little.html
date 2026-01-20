@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Little Learners Trust</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:#f5f5f5;
+    transition:0.3s;
+}
+
+/* DARK MODE */
+body.dark{
+    background:#121212;
+    color:white;
+}
+body.dark header{
+    background:#222;
+}
+body.dark .panel{
+    background:#1e1e1e;
+    color:white;
+}
+
+/* HEADER */
+header{
+    background:#0077cc;
+    padding:20px;
+    text-align:center;
+}
+nav a{
+    color:black;
+    margin:15px;
+    font-size:22px;
+    text-decoration:none;
+}
+nav button{
+    font-size:18px;
+    padding:8px 15px;
+    margin-left:10px;
+    cursor:pointer;
+}
+
+/* SECTION */
+section{
+    padding:20px;
+    text-align:center;
+}
+
+/* ACCORDION */
+.accordion{
+    background:#0077cc;
+    color:white;
+    cursor:pointer;
+    padding:15px;
+    width:90%;
+    text-align:center;
+    font-size:26px;
+    border:none;
+    border-radius:7px;
+    margin:15px auto;
+}
+
+.panel{
+    display:none;
+    padding:15px;
+    background:white;
+    width:85%;
+    font-size:18px;
+    margin:0 auto 15px;
+    border-radius:7px;
+    box-shadow:0 0 5px #aaa;
+    text-align:left;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Little Learners Trust</h1>
+<p>Education for Every Child</p>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Benefits</a>
+<a href="#">Contact</a>
+<a href="new_project.html">
+    <button>New Project</button>
+</a>
+
+<!-- NEW PROJECT BUTTON -->
+<button onclick="alert('Welcome to Little Learners Trust!')">
+click me</button>
+
+<button id="darkBtn">Enable Dark Mode</button>
+</nav>
+</header>
+
+<section>
+<h2>Welcome to Little Learners Trust</h2>
+<p>We work to provide quality education to underprivileged children.</p>
+<p>Shaping young minds with love, care, and education.</p>
+</section>
+
+<button class="accordion">Mission</button>
+<div class="panel">
+<p>Provide free quality education.</p>
+<p>Support underprivileged children.</p>
+<p>Empower children through learning.</p>
+</div>
+
+<button class="accordion">Vision</button>
+<div class="panel">
+<p>Build confident and skilled young minds.</p>
+<p>Create a joyful and inspiring environment.</p>
+</div>
+
+<button class="accordion">Benefits</button>
+<div class="panel">
+<p>Free education programs.</p>
+<p>Skill development workshops.</p>
+<p>Study material support.</p>
+</div>
+
+<script>
+// DARK MODE
+document.getElementById("darkBtn").onclick = function(){
+    document.body.classList.toggle("dark");
+    this.innerText = document.body.classList.contains("dark")
+        ? "Disable Dark Mode"
+        : "Enable Dark Mode";
+};
+
+// ACCORDION
+const acc = document.querySelectorAll(".accordion");
+acc.forEach(btn=>{
+    btn.onclick = function(){
+        const panel = this.nextElementSibling;
+        panel.style.display =
+        panel.style.display === "block" ? "none" : "block";
+    };
+});
+</script>
+
+</body>
+</html>
+
+
+

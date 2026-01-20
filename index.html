@@ -1,46 +1,87 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Little Learner Trust</title>
-    <style>
-        body{ font-family: Arial, sans-serif;margin: 1px;
-            padding:6px;background:#f5f5f5;
-        }
-        header { background: #0077cc;
-        padding: 20px; color: black;text-align: center;
-        }
-        nav a { color:black; margin:15px;
-               font-size:38px;}
-         section { padding:20px;
-                 text-align:center; }
-             img { width:80%; 
-                  border-radius: 10px;margin-top:20px ;
-                 }
-        .according {
-            background-color: #0077cc;
-            color: white;
-            cursor: poiner;
-            padding: 15px;
-            width: 100%;
-            text-align:center;
-            font-size:38px;
-            border-radius:7px;
-            margin: 15px auto;
-        }
-        .panel {
-            padding:15px;
-            background-color: white;
-            width:40%;
-            text-align:Left;
-            text-size:28px;
-            margin:15px auto;
-            border-radius: 7px;
-            box-shadow: 0 0 5px #aaa;
-        
- </style>
+<meta charset="UTF-8">
+<title>Little Learners Trust</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:#f5f5f5;
+    transition:0.3s;
+}
+
+/* DARK MODE */
+body.dark{
+    background:#121212;
+    color:white;
+}
+body.dark header{
+    background:#222;
+}
+body.dark .panel{
+    background:#1e1e1e;
+    color:white;
+}
+
+/* HEADER */
+header{
+    background:#0077cc;
+    padding:20px;
+    text-align:center;
+}
+nav a{
+    color:black;
+    margin:15px;
+    font-size:22px;
+    text-decoration:none;
+}
+nav button{
+    font-size:18px;
+    padding:8px 15px;
+    margin-left:10px;
+    cursor:pointer;
+}
+
+/* SECTION */
+section{
+    padding:20px;
+    text-align:center;
+}
+
+/* ACCORDION */
+.accordion{
+    background:#0077cc;
+    color:white;
+    cursor:pointer;
+    padding:15px;
+    width:90%;
+    text-align:center;
+    font-size:26px;
+    border:none;
+    border-radius:7px;
+    margin:15px auto;
+}
+
+.panel{
+    display:none;
+    padding:15px;
+    background:white;
+    width:85%;
+    font-size:18px;
+    margin:0 auto 15px;
+    border-radius:7px;
+    box-shadow:0 0 5px #aaa;
+    text-align:left;
+}
+</style>
 </head>
+
 <body>
+
 <header>
     <h1> Little Learners Trust</h1>
     <p>Education for Every Child </p>
@@ -57,61 +98,55 @@
    <img src="little_learners_trust_image.jpg"
      alt=" Little Learners Trust NGO"
      style="float: right;width: 340px;height: 340px;">
+
 <section>
-    <h2>Welcome to Little Learners Trust</h2>
-    <p>We work to provide quality education to underprivileged children.</p>
-    <p>Little Learners Trust NGO is a beacon of hope, shaping young minds
-    with love, care, and Education.</p>
-    <p>The organization empowers children by giving them tools they need 
-    to dream big and achieve even bigger.</p>
-    <p>With evvery lesson and every smile, 'Little Learners Trust' builds a
-    brighter future for children in need.</p>
-         <span style='font-size:100px;'>&#129335;</span>
+<h2>Welcome to Little Learners Trust</h2>
+<p>We work to provide quality education to underprivileged children.</p>
+<p>Shaping young minds with love, care, and education.</p>
 </section>
 
-    <button class="according"> Mission</button>
-    <div class="panel">
-         
-         <p>provide free quality education.</p>
-         <p>Support underprivileged children.</p>
-         <p>Empower through lerarning.</p>
-         <p>Our mission is to provide accessible,<br>
-            holistic education that nurtures, curiosity<br>
-            confidence and character in every child.</p>
-         <p>Our mission is to light that path with learning<br>
-            and love.</p>
-        
-    </div>
-    <button class="according"> Vision</button>
-    <div class="panel">
-        <p>Build confident, skilled young minds.</p>
-        <p>Transform society through education.</p>
-        <p>To create a safe, joyful, and inspiring
-           Environment.</p>
-        <p>Shaping little dream today for a stronger<br>
-           brighter tommorow.</p>
-    </div>
-    <button class="according"> Benefits</button> 
-    <div class="panel">
-    <p>Free education programs.</p>
-     <p>Skill development workshops.</p>
-     <p>Study materials supports.</p>
-     <p>Awareness & counseling sessions.</p>
-     <p>Builds a more educational support<br>
-        that reduces financial stress or families.</p>
-   </div>
+<button class="accordion">Mission</button>
+<div class="panel">
+<p>Provide free quality education.</p>
+<p>Support underprivileged children.</p>
+<p>Empower children through learning.</p>
+</div>
+
+<button class="accordion">Vision</button>
+<div class="panel">
+<p>Build confident and skilled young minds.</p>
+<p>Create a joyful and inspiring environment.</p>
+</div>
+
+<button class="accordion">Benefits</button>
+<div class="panel">
+<p>Free education programs.</p>
+<p>Skill development workshops.</p>
+<p>Study material support.</p>
+</div>
+
+<script>
+// DARK MODE
+document.getElementById("darkBtn").onclick = function(){
+    document.body.classList.toggle("dark");
+    this.innerText = document.body.classList.contains("dark")
+        ? "Disable Dark Mode"
+        : "Enable Dark Mode";
+};
+
+// ACCORDION
+const acc = document.querySelectorAll(".accordion");
+acc.forEach(btn=>{
+    btn.onclick = function(){
+        const panel = this.nextElementSibling;
+        panel.style.display =
+        panel.style.display === "block" ? "none" : "block";
+    };
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
 

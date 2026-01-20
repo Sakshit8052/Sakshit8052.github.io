@@ -54,7 +54,7 @@ section{
 }
 
 /* ACCORDION */
-.according{
+.accordion{
     background:#0077cc;
     color:white;
     cursor:pointer;
@@ -93,14 +93,13 @@ section{
     <a href="benefits.html">Benefits</a>
     <a href="contact.html">Contact Us</a>
     <a href="lion_history.html">Etc.</a>  
-    <button onclick="alert('Hello this is Little Learners Trust, How may i help you?')" style="background-color: rebeccapurple;font-size: 40px;
-">Click Me</button>
- </nav>
-<!-- NEW PROJECT BUTTON -->
-<button onclick="alert('Welcome to Little Learners Trust!')">
-click me</button>
+    <button onclick="alert('Hello this is Little Learners Trust, How may i help you?')" style="background-color: rebeccapurple;font-size: 40px;">Click Me</button>
 
-<button id="darkBtn">Enable Dark Mode</button>
+    <!-- NEW PROJECT BUTTON -->
+    <button onclick="alert('Welcome to Little Learners Trust!')">
+    click me</button>
+
+    <button id="darkBtn">Enable Dark Mode</button>
 </nav>
 </header>
 
@@ -111,16 +110,17 @@ click me</button>
     with love, care, and Education.</p>
     <p>The organization empowers children by giving them tools they need 
     to dream big and achieve even bigger.</p>
-    <p>With evvery lesson and every smile, 'Little Learners Trust' builds a
+    <p>With every lesson and every smile, 'Little Learners Trust' builds a
     brighter future for children in need.</p>
          <span style='font-size:100px;'>&#129335;</span>
 </section>
+
 <button class="according"> Mission</button>
     <div class="panel">
          
          <p>provide free quality education.</p>
          <p>Support underprivileged children.</p>
-         <p>Empower through lerarning.</p>
+         <p>Empower through learning.</p>
          <p>Our mission is to provide accessible,<br>
             holistic education that nurtures, curiosity<br>
             confidence and character in every child.</p>
@@ -128,7 +128,7 @@ click me</button>
             and love.</p>
         
     </div>
-    <button class="according"> Vision</button>
+<button class="according"> Vision</button>
     <div class="panel">
         <p>Build confident, skilled young minds.</p>
         <p>Transform society through education.</p>
@@ -137,7 +137,7 @@ click me</button>
         <p>Shaping little dream today for a stronger<br>
            brighter tomorrow.</p>
     </div>
-    <button class="according"> Benefits</button> 
+<button class="according"> Benefits</button> 
     <div class="panel">
     <p>Free education programs.</p>
      <p>Skill development workshops.</p>
@@ -157,7 +157,7 @@ document.getElementById("darkBtn").onclick = function(){
 };
 
 // ACCORDION
-const acc = document.querySelectorAll(".accordion");
+const acc = document.querySelectorAll(".according");
 acc.forEach(btn=>{
     btn.onclick = function(){
         const panel = this.nextElementSibling;
@@ -169,6 +169,7 @@ acc.forEach(btn=>{
 
 </body>
 </html>
+
 
 
 

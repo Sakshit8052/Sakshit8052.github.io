@@ -53,6 +53,7 @@
     <button id="darkToggle"></button>    
     <button onclick="alert('Hello this is Little Learners Trust, How may i help you?')" style="background-color: rebeccapurple;font-size: 40px;
 ">Click Me</button>
+        <button id="darkBtn">Enable Dark Mode</button>
  </nav>
 </header>
    <img src="little_learners_trust_image.jpg"
@@ -101,9 +102,36 @@
      <p>Builds a more educational support<br>
         that reduces financial stress or families.</p>
    </div>
-    
+    <script>
+/* ===== DARK MODE ===== */
+document.getElementById("darkBtn").onclick = function(){
+    document.body.classList.toggle("dark");
+    this.innerText = document.body.classList.contains("dark")
+        ? "Disable Dark Mode"
+        : "Enable Dark Mode";
+};
+
+/* ===== ACCORDION ===== */
+const acc = document.querySelectorAll(".accordion");
+acc.forEach(btn=>{
+    btn.onclick = function(){
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+    };
+});
+
+/* ===== MESSAGE COUNTER ===== */
+document.getElementById("msgBtn").onclick = function(){
+    document.getElementById("counterBox").style.display = "block";
+};
+
+document.getElementById("textBox").oninput = function(){
+    document.getElementById("count").innerText = this.value.length;
+};
+</script>
 </body>
 </html>
+
 
 
 

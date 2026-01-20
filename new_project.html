@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Little Learners Trust – Projects</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#f4f6f9;
+    padding:30px;
+    text-align:center;
+    transition:0.3s;
+    color:#333;
+}
+
+/* BUTTON STYLE */
+.btn{
+    padding:12px 25px;
+    margin:10px;
+    background:#0077cc;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* PROJECT BOX */
+.project{
+    display:none;
+    background:white;
+    margin:30px auto;
+    max-width:600px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* PROJECT 1 BUTTONS */
+#p1 button{
+    padding:8px 15px;
+    margin:5px;
+    font-size:14px;
+}
+
+/* FULL SCREEN THEME COLORS */
+.dark{
+    background:#121212;
+    color:white;
+}
+.red{
+    background:#d32f2f;
+    color:white;
+}
+.blue{
+    background:#1976d2;
+    color:white;
+}
+.green{
+    background:#2e7d32;
+    color:white;
+}
+
+/* Buttons color in different themes */
+.dark .btn{background:#00b4db;color:black;}
+.red .btn{background:#ff6659;color:white;}
+.blue .btn{background:#64b5f6;color:white;}
+.green .btn{background:#81c784;color:white;}
+</style>
+</head>
+
+<body>
+
+<h1>Our Projects</h1>
+
+<!-- PROJECT BUTTONS -->
+<button class="btn" onclick="openProject('p1')">Project 1</button>
+<button class="btn" onclick="openProject('p2')">Project 2</button>
+<button class="btn" onclick="window.location='project_3.html'">Project 3</button>
+<button class="btn" onclick="openProject('p4')">Project 4</button>
+<button class="btn" onclick="openProject('p5')">Project 5</button>
+<button class="btn" onclick="openProject('p6')">Project 6</button>
+<button class="btn" onclick="openProject('p7')">Project 7</button>
+
+<!-- PROJECT 1 : FULL SCREEN COLOR THEME -->
+<div id="p1" class="project">
+<h2>Project 1 – Theme Colors</h2>
+<p>Select your preferred color for full screen:</p>
+
+<button class="btn" onclick="toggleTheme('dark')">Dark</button>
+<button class="btn" onclick="toggleTheme('red')">Red</button>
+<button class="btn" onclick="toggleTheme('blue')">Blue</button>
+<button class="btn" onclick="toggleTheme('green')">Green</button>
+</div>
+
+<!-- PROJECT 2 : LIVE CHARACTER COUNTER -->
+<div id="p2" class="project">
+<h2>Project 2 – Live Character Counter</h2>
+<textarea id="textBox" maxlength="100"
+style="width:100%;height:80px;"
+placeholder="Type here..."></textarea>
+<p>Characters: <span id="count">0</span>/100</p>
+</div>
+
+<!-- SIMPLE PROJECTS -->
+<div id="p4" class="project"><h2>Project 4</h2><p>Simple project</p></div>
+<div id="p5" class="project"><h2>Project 5</h2><p>Simple project</p></div>
+<div id="p6" class="project"><h2>Project 6</h2><p>Simple project</p></div>
+<div id="p7" class="project"><h2>Project 7</h2><p>Simple project</p></div>
+
+<script>
+/* OPEN ONE PROJECT AT A TIME */
+function openProject(id){
+    let projects = document.getElementsByClassName("project");
+    for(let i=0;i<projects.length;i++){
+        projects[i].style.display="none";
+    }
+    document.getElementById(id).style.display="block";
+}
+
+/* LIVE CHARACTER COUNTER */
+let textBox = document.getElementById("textBox");
+let count = document.getElementById("count");
+if(textBox){
+    textBox.addEventListener("input", function(){
+        count.innerText = textBox.value.length;
+    });
+}
+
+/* FULL SCREEN THEME TOGGLE FOR PROJECT 1 */
+let currentTheme = ""; // store current theme
+function toggleTheme(theme){
+    if(currentTheme === theme){
+        // toggle off → remove theme
+        document.body.classList.remove(theme);
+        currentTheme = "";
+    } else {
+        // remove previous theme if any
+        if(currentTheme) document.body.classList.remove(currentTheme);
+        // apply new theme
+        document.body.classList.add(theme);
+        currentTheme = theme;
+    }
+}
+</script>
+
+</body>
+</html>
+

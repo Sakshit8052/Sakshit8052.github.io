@@ -131,7 +131,7 @@ img{
     </div>
 
     <!-- ACCORDION : VISION -->
-    <button class="accordion">Vision</button>
+    <button class="according">Vision</button>
     <div class="panel">
         <p>Build confident, skilled young minds.</p>
         <p>Transform society through education.</p>
@@ -139,7 +139,7 @@ img{
     </div>
 
     <!-- ACCORDION : BENEFITS -->
-    <button class="accordion">Benefits</button>
+    <button class="according">Benefits</button>
     <div class="panel">
         <p>Free education programs.</p>
         <p>Skill development workshops.</p>
@@ -147,7 +147,7 @@ img{
         <p>Awareness & counseling sessions.</p>
     </div>
 
-
+<script>
 // 🌙 DARK MODE
 document.getElementById("darkBtn").onclick = function(){
     document.body.classList.toggle("dark");
@@ -156,7 +156,7 @@ document.getElementById("darkBtn").onclick = function(){
         : "Enable Dark Mode";
 };
 
-// 📂 ACCORDION
+// 📂 ACCORDING
 document.querySelectorAll(".according").forEach(btn=>{
     btn.onclick = function(){
         const panel = this.nextElementSibling;
@@ -175,6 +175,7 @@ document.body.addEventListener("click", function(){
 
 </body>
 </html>
+
 
 
 

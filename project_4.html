@@ -18,14 +18,14 @@
         }
 
         nav a {
-            color: black;
+            color: white;
             margin: 15px;
             font-size: 38px;
             text-decoration: none;
         }
 
 #bulb{
-    width:500px;
+    width:400px;
     display:block;
     margin:20px auto;  
      align-items:center;
@@ -39,10 +39,13 @@
     <source src="music.mp3.mp3" type="audio/mpeg">
 </audio>
 
-<nav>
-    <a href="index.html">Home</a>
-     <button onclick="window.location='new_project.html'">New Project</button>
-</nav>
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <button onclick="window.location='new_project.html'">New Project</button>
+    </nav>
+</header>
+
 
 <h2 id="text">
     <img id="bulb" src="off_bulb.jpg">
@@ -54,6 +57,9 @@
 <script>
 function changeBulb(){
     document.getElementById("bulb").src = "on_bulb.jpg";
+}
+function changeBulb(){
+   ...
 }
 
 
@@ -75,6 +81,7 @@ function changeBulb(){
 
 </body>
 </html>
+
 
 
 

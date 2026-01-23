@@ -42,12 +42,12 @@ nav button{
     cursor:pointer;
 }
 
-/* SECTION */
-section{
-    padding:20px;
-    text-align:center;
-}
-img{
+
+section{ padding:30px;
+        max-width:900px;
+        margin:auto;
+        text-align:center; }
+img {
     width:80%;
     border-radius:10px;
     margin-top:20px;
@@ -97,18 +97,17 @@ img{
 
     <button onclick="alert('Hello this is Little Learners Trust, How may I help you?')"
     style="background-color:rebeccapurple;font-size:40px;">Click Me</button>
-
+ 
     <button onclick="window.location='new_project.html'">New Project</button>
     <button id="darkBtn">Enable Dark Mode</button>
 </nav>
 </header>
 
- <!-- IMAGE -->
     <img src="little_learners_trust_image.jpg"
         alt="Little Learners Trust NGO"
         style="float:right; width:340px; height:340px;">
 
-    <!-- SECTION -->
+
     <section>
         <h2>Welcome to Little Learners Trust</h2>
         <p>We work to provide quality education to underprivileged children.</p>
@@ -118,7 +117,7 @@ img{
         <span style="font-size:100px;">&#129335;</span>
     </section>
 
-    <!-- ACCORDION : MISSION -->
+   
     <button class="according">Mission</button>
     <div class="panel">
         <p>Provide free quality education.</p>
@@ -127,7 +126,7 @@ img{
         <p>Our mission is to provide accessible, holistic education.</p>
     </div>
 
-    <!-- ACCORDION : VISION -->
+   
     <button class="according">Vision</button>
     <div class="panel">
         <p>Build confident, skilled young minds.</p>
@@ -135,7 +134,7 @@ img{
         <p>Create a safe, joyful, and inspiring environment.</p>
     </div>
 
-    <!-- ACCORDION : BENEFITS -->
+  
     <button class="according">Benefits</button>
     <div class="panel">
         <p>Free education programs.</p>
@@ -153,7 +152,6 @@ document.getElementById("darkBtn").onclick = function(){
         : "Enable Dark Mode";
 };
 
-// 📂 ACCORDING
 document.querySelectorAll(".according").forEach(btn=>{
     btn.onclick = function(){
         const panel = this.nextElementSibling;
@@ -168,10 +166,12 @@ document.body.addEventListener("click", function(){
     audio.muted = false;
     audio.play();
 },{ once:true });
+ 
 </script>
 
 </body>
 </html>
+
 
 
 

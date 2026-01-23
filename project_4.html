@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS in HTML</title>
+</head>
+<body>
+
+<h2 id="text">
+    <img id="bulb" src="off_bulb.jpg" width="200" height="150">
+</h2>
+
+<button onclick="changeBulb()">Change Bulb</button>
+
+<script>
+function changeBulb(){
+    document.getElementById("bulb").src = "on_bulb.jpg";
+}
+
+
+let isOn = false;
+
+function changeBulb(){
+    let bulb = document.getElementById("bulb");
+
+    if(isOn){
+        bulb.src = "off_bulb.jpg";
+        isOn = false;
+    } else {
+        bulb.src = "on_bulb.jpg";
+        isOn = true;
+    }
+}
+</script>
+
+
+</body>
+</html>
+

@@ -7,10 +7,7 @@
 <style>
  body{ font-family: Arial, sans-serif;margin: 1px;
             padding:6px;background:#f5f5f5;
-        }
-        header { background: #0077cc;
-        padding: 20px; color: black;text-align: center;
-        }
+     }
         nav a { color:black;
                margin:15px;
                font-size:38px;
@@ -39,7 +36,6 @@ img {
     margin-top:20px;
 }
 
- /* Accordion Button */
         .accordion {
             background-color: #0077cc;
             color: white;
@@ -53,7 +49,6 @@ img {
             border: none;
         }
 
-        /* Accordion Panel */
         .panel {
             display: none;
             padding: 15px;
@@ -125,7 +120,7 @@ img {
     </section>
 
    
-    <button class="according">Mission</button>
+    <button class="accordion">Mission</button>
     <div class="panel">
         <p>Provide free quality education.</p>
         <p>Support underprivileged children.</p>
@@ -134,7 +129,7 @@ img {
     </div>
 
    
-    <button class="according">Vision</button>
+    <button class="accordion">Vision</button>
     <div class="panel">
         <p>Build confident, skilled young minds.</p>
         <p>Transform society through education.</p>
@@ -142,7 +137,7 @@ img {
     </div>
 
   
-    <button class="according">Benefits</button>
+    <button class="accordion">Benefits</button>
     <div class="panel">
         <p>Free education programs.</p>
         <p>Skill development workshops.</p>
@@ -159,7 +154,7 @@ document.getElementById("darkBtn").onclick = function(){
         : "Enable Dark Mode";
 };
 
-document.querySelectorAll(".according").forEach(btn=>{
+document.querySelectorAll(".accordion").forEach(btn=>{
     btn.onclick = function(){
         const panel = this.nextElementSibling;
         panel.style.display =
@@ -178,6 +173,7 @@ document.body.addEventListener("click", function(){
 
 </body>
 </html>
+
 
 
 

@@ -1,127 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Age Based Image Project</title>
+<title>Multi Color Bulb Project</title>
 
 <style>
-    body{
-        font-family: Arial, sans-serif;
-        background:#f2f2f2;
-        text-align:center;
-        padding-top:40px;
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background: #f5f5f5;
+    text-align:center;
+}
 
-    .box{
-        background:white;
-        width:360px;
-        margin:auto;
-        padding:25px;
-        border-radius:15px;
-        box-shadow:0 10px 25px rgba(0,0,0,0.2);
-    }
+header {
+    background: #0077cc;
+    padding: 20px;
+}
 
-    input{
-        width:90%;
-        padding:10px;
-        font-size:16px;
-        margin-bottom:15px;
-    }
+nav a {
+    color: white;
+    margin: 15px;
+    font-size: 24px;
+    text-decoration: none;
+}
 
-    button{
-        padding:10px 25px;
-        font-size:16px;
-        border:none;
-        border-radius:10px;
-        background:#0077cc;
-        color:white;
-        cursor:pointer;
-    }
+nav button{
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer;
+}
 
-    button:hover{
-        background:#005fa3;
-    }
+/* BULB IMAGE */
+#bulb{
+    width:350px;
+    display:block;
+    margin:20px auto;  
+}
 
-    img{
-        margin-top:20px;
-        width:200px;
-        height:200px;
-        display:none;
-    }
+/* BULB BOX */
+.bulb-box{
+    margin-top:20px;
+}
 
-    h3{
-        margin-top:10px;
-        display:none;
-        color:#333;
-    }
+/* BUTTONS */
+.light-btn{
+    padding:12px 25px;
+    font-size:18px;
+    margin:8px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    color:white;
+}
+
+.red{ background:red; }
+.yellow{ background:gold; color:black; }
+.green{ background:green; }
+.off{ background:black; }
 </style>
 </head>
 
 <body>
 
-<div class="box">
-    <h2>Age Based Person</h2>
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <button onclick="window.location='new_project.html'">New Project</button>
+    </nav>
+</header>
 
-    <!-- NO COUNTER -->
-    <input type="text" id="age" placeholder="Enter your age">
+<h2>Multi Color Bulb Project</h2>
+
+<div class="bulb-box">
+    <img id="bulb" src="off_bulb.jpg">
 
     <br>
-    <button onclick="checkAge()">Check</button>
 
-    <!-- Images -->
-    <img id="child" src="child.jpg">
-    <h3 id="childName">Child</h3>
-
-    <img id="young" src="young.jpg">
-    <h3 id="youngName">Young Person</h3>
-
-    <img id="normal" src="normal.jpg">
-    <h3 id="normalName">Normal Adult</h3>
-
-    <img id="senior" src="senior.jpg">
-    <h3 id="seniorName">Senior Citizen</h3>
+    <button class="light-btn red" onclick="changeLight('redlight.jpg')">Red</button>
+    <button class="light-btn yellow" onclick="changeLight('yellowlight.jpg')">Yellow</button>
+    <button class="light-btn green" onclick="changeLight('greenlight.jpg')">Green</button>
+    <button class="light-btn off" onclick="changeLight('off_bulb.jpg')">OFF</button>
 </div>
 
 <script>
-function hideAll(){
-    document.getElementById("child").style.display = "none";
-    document.getElementById("young").style.display = "none";
-    document.getElementById("normal").style.display = "none";
-    document.getElementById("senior").style.display = "none";
-
-    document.getElementById("childName").style.display = "none";
-    document.getElementById("youngName").style.display = "none";
-    document.getElementById("normalName").style.display = "none";
-    document.getElementById("seniorName").style.display = "none";
-}
-
-function checkAge(){
-    let age = document.getElementById("age").value;
-
-    hideAll();
-
-    if(age === "" || age < 0){
-        alert("Please enter valid age");
-    }
-    else if(age <= 14){
-        document.getElementById("child").style.display = "block";
-        document.getElementById("childName").style.display = "block";
-    }
-    else if(age < 30){
-        document.getElementById("young").style.display = "block";
-        document.getElementById("youngName").style.display = "block";
-    }
-    else if(age < 60){
-        document.getElementById("normal").style.display = "block";
-        document.getElementById("normalName").style.display = "block";
-    }
-    else{
-        document.getElementById("senior").style.display = "block";
-        document.getElementById("seniorName").style.display = "block";
-    }
+function changeLight(imageName){
+    document.getElementById("bulb").src = imageName;
 }
 </script>
 
 </body>
 </html>
+
 

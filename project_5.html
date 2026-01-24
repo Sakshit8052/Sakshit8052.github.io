@@ -14,7 +14,7 @@
 
     .box{
         background:white;
-        width:350px;
+        width:360px;
         margin:auto;
         padding:25px;
         border-radius:15px;
@@ -48,55 +48,80 @@
         height:200px;
         display:none;
     }
+
+    h3{
+        margin-top:10px;
+        display:none;
+        color:#333;
+    }
 </style>
 </head>
 
 <body>
 
 <div class="box">
-    <h2>Age Based Image</h2>
+    <h2>Age Based Person</h2>
 
-    <input type="number" id="age" placeholder="Enter your age">
+    <!-- NO COUNTER -->
+    <input type="text" id="age" placeholder="Enter your age">
 
     <br>
     <button onclick="checkAge()">Check</button>
 
-    <br>
-
     <!-- Images -->
     <img id="child" src="child.jpg">
+    <h3 id="childName">Child</h3>
+
     <img id="young" src="young.jpg">
+    <h3 id="youngName">Young Person</h3>
+
     <img id="normal" src="normal.jpg">
+    <h3 id="normalName">Normal Adult</h3>
+
     <img id="senior" src="senior.jpg">
+    <h3 id="seniorName">Senior Citizen</h3>
 </div>
 
 <script>
-function checkAge(){
-    let age = document.getElementById("age").value;
-
-    // hide all images first
+function hideAll(){
     document.getElementById("child").style.display = "none";
     document.getElementById("young").style.display = "none";
     document.getElementById("normal").style.display = "none";
     document.getElementById("senior").style.display = "none";
 
-    if(age === ""){
-        alert("Please enter age");
+    document.getElementById("childName").style.display = "none";
+    document.getElementById("youngName").style.display = "none";
+    document.getElementById("normalName").style.display = "none";
+    document.getElementById("seniorName").style.display = "none";
+}
+
+function checkAge(){
+    let age = document.getElementById("age").value;
+
+    hideAll();
+
+    if(age === "" || age < 0){
+        alert("Please enter valid age");
     }
     else if(age <= 14){
         document.getElementById("child").style.display = "block";
+        document.getElementById("childName").style.display = "block";
     }
     else if(age < 30){
         document.getElementById("young").style.display = "block";
+        document.getElementById("youngName").style.display = "block";
     }
     else if(age < 60){
         document.getElementById("normal").style.display = "block";
+        document.getElementById("normalName").style.display = "block";
     }
     else{
         document.getElementById("senior").style.display = "block";
+        document.getElementById("seniorName").style.display = "block";
     }
 }
 </script>
 
 </body>
 </html>
+

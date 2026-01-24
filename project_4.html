@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JS in HTML</title>
+<title>Multi Color Bulb Project</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
-    margin: 1px;
-    padding: 6px;
+    margin: 0;
+    padding: 10px;
     background: #f5f5f5;
     text-align:center;
 }
@@ -15,52 +15,52 @@ body {
 header {
     background: #0077cc;
     padding: 20px;
-    color: black;
-    text-align: center;
 }
 
 nav a {
     color: white;
     margin: 15px;
-    font-size: 28px;
+    font-size: 24px;
     text-decoration: none;
 }
 
 nav button{
     padding:10px 20px;
-    font-size:18px;
+    font-size:16px;
     cursor:pointer;
 }
 
 /* BULB IMAGE */
 #bulb{
-    width:400px;
+    width:350px;
     display:block;
     margin:20px auto;  
 }
 
-/* BULB + BUTTON BOX */
+/* BULB BOX */
 .bulb-box{
-    text-align:center;
     margin-top:20px;
 }
 
-.bulb-box button{
-    margin-top:15px;
-    padding:12px 30px;
-    font-size:22px;
+/* BUTTONS */
+.light-btn{
+    padding:12px 25px;
+    font-size:18px;
+    margin:8px;
+    border:none;
     border-radius:10px;
     cursor:pointer;
+    color:white;
 }
+
+.red{ background:red; }
+.yellow{ background:gold; color:black; }
+.green{ background:green; }
+.off{ background:black; }
 </style>
 </head>
 
 <body>
-
-<!-- 🔊 BACKGROUND AUDIO -->
-<audio id="bgAudio" autoplay muted loop>
-    <source src="music.mp3.mp3" type="audio/mpeg">
-</audio>
 
 <header>
     <nav>
@@ -69,39 +69,24 @@ nav button{
     </nav>
 </header>
 
-<h2>Bulb ON / OFF Project</h2>
+<h2>Multi Color Bulb Project</h2>
 
 <div class="bulb-box">
     <img id="bulb" src="off_bulb.jpg">
-    <button onclick="changeBulb()">ON / OFF</button>
+
+    <br>
+
+    <button class="light-btn red" onclick="changeLight('redlight.jpg')">Red</button>
+    <button class="light-btn yellow" onclick="changeLight('yellowlight.jpg')">Yellow</button>
+    <button class="light-btn green" onclick="changeLight('greenlight.jpg')">Green</button>
+    <button class="light-btn off" onclick="changeLight('off_bulb.jpg')">OFF</button>
 </div>
 
 <script>
-let isOn = false;
-
-function changeBulb(){
-    let bulb = document.getElementById("bulb");
-
-    if(isOn){
-        bulb.src = "off_bulb.jpg";
-        isOn = false;
-    } else {
-        bulb.src = "greenlight.jpg";
-        isOn = true;
-    }
+function changeLight(imageName){
+    document.getElementById("bulb").src = imageName;
 }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

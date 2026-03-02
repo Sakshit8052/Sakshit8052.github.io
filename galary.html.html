@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiple Image Gallery</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f4f4;
+}
+
+/* Header */
+h1{
+  text-align:center;
+  padding:20px;
+}
+
+/* Gallery Grid */
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:15px;
+  padding:20px;
+}
+
+/* Image Card */
+.gallery img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:10px;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+  nav ul li a {
+  color: yellow; /* Higher specificity */
+}
+
+
+</style>
+</head>
+
+<body>
+
+<h1>My Image Gallery</h1>
+
+<div class="gallery">
+  <img src="https://picsum.photos/id/1015/600/400" alt="Image 1">
+  <img src="https://picsum.photos/id/1016/600/400" alt="Image 2">
+  <img src="https://picsum.photos/id/1018/600/400" alt="Image 3">
+  <img src="https://picsum.photos/id/1020/600/400" alt="Image 4">
+  <img src="https://picsum.photos/id/1024/600/400" alt="Image 5">
+  <img src="https://picsum.photos/id/1035/600/400" alt="Image 6">
+    <img src="galary11.png" alt="Image 7">
+    <img src="galary8.jpg" alt="Image 8">
+    <img src="galary9.jpg" alt="Image 9">
+    <img src="galary10.jpg" alt="Image 10">
+     <img src="galary12.jpg" alt="Image 11">
+     <img src="galary13.jpg" alt="Image 12">
+    <ul>
+        <li><a href="http://localhost:63342/UTF-8.txt/new%20project%20on%20css.html?">Home</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

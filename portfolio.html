@@ -43,6 +43,12 @@
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
 }
+    .image-preview {
+    display: flex;
+    justify-content: center;  /* horizontal center */
+    align-items: center;
+    margin-top: 30px;
+}
 </style>
 
 </head>
@@ -58,9 +64,8 @@
     <button class="pf-btn" onclick="showImage('img5.jpg')">PF 5</button>
 </div>
     
-    <div>
-<img id="portfolioImage" src="portfolio_image.jpg" 
-     width="800" height="500" alt="Portfolio Image">
+<div class="image-preview">
+    <img id="portfolioImage" src="portfolio_image.jpg" alt="Portfolio Image">
 </div>
 
 <script>
@@ -72,5 +77,6 @@ function showImage(imageName) {
 </body>
 
 </html>
+
 
 

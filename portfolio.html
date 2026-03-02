@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio</title>
+<style>
+.portfolio-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 28px;
+}
+
+.portfolio-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pf-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pf-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.image-preview {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.image-preview img {
+    width: 60%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+}
+</style>
+
+</head>
+<body>
+
+<h2 class="portfolio-title">Our Portfolio</h2>
+
+<div class="portfolio-buttons">
+    <button class="pf-btn" onclick="showImage('img1.jpg')">PF 1</button>
+    <button class="pf-btn" onclick="showImage('img2.jpg')">PF 2</button>
+    <button class="pf-btn" onclick="showImage('img3.jpg')">PF 3</button>
+    <button class="pf-btn" onclick="showImage('img4.jpg')">PF 4</button>
+    <button class="pf-btn" onclick="showImage('img5.jpg')">PF 5</button>
+</div>
+
+<div class="image-preview">
+    <img id="portfolioImage" src="img1.jpg" alt="Portfolio Image">
+</div>
+
+<script>
+function showImage(imageName) {
+    document.getElementById("portfolioImage").src = imageName;
+}
+</script>
+
+</body>
+</html>

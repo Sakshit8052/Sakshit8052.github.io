@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Dropdown</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#141e30,#243b55);
+}
+
+/* NAVBAR */
+.navbar{
+  background:#222;
+  display:flex;
+  align-items:center;
+  padding:0 20px;
+  position:relative;
+}
+
+.logo{
+  color:white;
+  font-size:20px;
+  padding:15px 0;
+}
+
+.nav-links{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  margin-left:auto;
+}
+
+.nav-links li{
+  position:relative;
+}
+
+.nav-links a{
+  display:block;
+  padding:15px 18px;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  background:#444;
+}
+
+/* Arrow */
+.has-dropdown > a::after{
+  content:" ▼";
+  font-size:12px;
+}
+
+/* DROPDOWN BASE */
+.dropdown-menu,
+.sub-menu{
+  position:absolute;
+  background:white;
+  min-width:180px;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .3s ease;
+  z-index:1000;
+}
+
+/* MAIN DROPDOWN POSITION */
+.dropdown-menu{
+  top:100%;
+  left:0;
+}
+
+/* SUBMENU POSITION */
+.sub-menu{
+  top:0;
+  left:100%;
+}
+
+/* SHOW ACTIVE */
+li.active > .dropdown-menu,
+li.active > .sub-menu{
+  opacity:1;
+  visibility:visible;
+}
+
+/* DROPDOWN LINKS */
+.dropdown-menu a,
+.sub-menu a{
+  color:black;
+  padding:10px 15px;
+  display:block;
+}
+
+.dropdown-menu a:hover,
+.sub-menu a:hover{
+  background:#f1f1f1;
+}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  font-size:26px;
+  color:white;
+  cursor:pointer;
+  margin-left:auto;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .hamburger{
+    display:block;
+  }
+
+  .nav-links{
+    flex-direction:column;
+    width:100%;
+    display:none;
+    background:#222;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .dropdown-menu,
+  .sub-menu{
+    position:static;
+    box-shadow:none;
+    opacity:1;
+    visibility:visible;
+  }
+}
+
+/* 3D Header */
+.container{
+  height:calc(100vh - 60px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  perspective:1000px;
+}
+
+header{
+  font-size:40px;
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  transform-style:preserve-3d;
+  animation:rotate3D 3s ease-in-out infinite alternate;
+}
+
+@keyframes rotate3D{
+  0%{transform:rotateX(0deg) rotateY(0deg);}
+  100%{transform:rotateX(20deg) rotateY(20deg);}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">MySite</div>
+  <div class="hamburger">☰</div>
+
+  <ul class="nav-links">
+    <li><a href="https://sakshit8052.github.io/">Home</a></li>
+
+    <li class="has-dropdown">
+      <a href="#">Services</a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Web Design</a></li>
+
+        <li class="has-dropdown">
+          <a href="#">Development</a>
+          <ul class="sub-menu">
+            <li><a href="https://sakshit8052.github.io/TripathiAirCoolers/">Frontend</a></li>
+            <li><a href="https://sakshit8052.github.io/new_project.html">Backend</a></li>
+            <li><a href="#">Full Stack</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">SEO</a></li>
+      </ul>
+    </li>
+
+    <li><a href="https://sakshit8052.github.io/TripathiAirCoolers/enquiry.html">About / Enquiry</a></li>
+    <li><a href="https://sakshit8052.github.io/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <header>HELLO! WELCOME TO MY SITE WHAT CAN I HELP YOU</header>
+</div>
+
+<script>
+// Mobile Menu
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+// Dropdown Click
+document.querySelectorAll(".has-dropdown > a").forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const parent = this.parentElement;
+
+    // Close siblings only
+    Array.from(parent.parentElement.children).forEach(sibling => {
+      if (sibling !== parent) {
+        sibling.classList.remove("active");
+      }
+    });
+
+    parent.classList.toggle("active");
+  });
+});
+
+// Close All When Click Outside
+document.addEventListener("click", () => {
+  document.querySelectorAll(".has-dropdown").forEach(item => {
+    item.classList.remove("active");
+  });
+});
+</script>
+
+</body>
+</html>

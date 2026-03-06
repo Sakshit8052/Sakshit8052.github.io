@@ -1,67 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Portfolio</title>
+<title>Portfolio</title>
+
 <style>
+
 .portfolio-title {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 28px;
+text-align:center;
+margin-top:40px;
+font-size:28px;
 }
 
 .portfolio-buttons {
-    text-align: center;
-    margin-top: 30px;
+text-align:center;
+margin-top:30px;
 }
 
-.pf-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
+.pf-btn{
+background-color:#007bff;
+color:white;
+padding:14px 28px;
+margin:10px;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
 }
 
-.pf-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+.pf-btn:hover{
+background-color:#0056b3;
+transform:scale(1.08);
 }
 
-.image-preview {
-    text-align: center;
-    margin-top: 30px;
+.image-preview{
+text-align:center;
+margin-top:40px;
 }
 
-.image-preview img {
-    width: 60%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+.image-preview img{
+width:50%;
+max-width:500px;
+border-radius:10px;
+box-shadow:0px 4px 15px rgba(0,0,0,0.3);
 }
+
 </style>
 
 </head>
+
 <body>
 
 <h2 class="portfolio-title">Our Portfolio</h2>
 
 <div class="portfolio-buttons">
- <button class="btn" onclick="openportfolio('PF1')">PF 1</button>
-<button class="btn" onclick="openPortfolio('PF2')">PF 2</button>
-<button class="btn" onclick="openPortfolio('PF3')">PF 3</button>
-<button class="btn" onclick="openportfolio('PF4')">PF 4</button>
+
+<button class="pf-btn" onclick="openPortfolio('PF1')">PF 1</button>
+
+<button class="pf-btn" onclick="openPortfolio('PF2')">PF 2</button>
+
+<button class="pf-btn" onclick="openPortfolio('PF3')">PF 3</button>
+
+<button class="pf-btn" onclick="openPortfolio('PF4')">PF 4</button>
+
 </div>
 
 <div class="image-preview">
-    <img id="portfolio_Image.jpg" src="portfolio_image.jpg" alt="Portfolio Image">
+<img id="portfolioImage" src="portfolio_image.jpg" alt="Portfolio Image">
 </div>
+
+<script>
+
+function openPortfolio(pf){
+
+var img=document.getElementById("portfolioImage");
+
+if(pf=="PF1"){
+img.src="portfolio1.jpg";
+}
+
+else if(pf=="PF2"){
+img.src="portfolio2.jpg";
+}
+
+else if(pf=="PF3"){
+img.src="portfolio3.jpg";
+}
+
+else if(pf=="PF4"){
+img.src="portfolio4.jpg";
+}
+
+}
+
+</script>
 
 </body>
 </html>
+
 
 
 

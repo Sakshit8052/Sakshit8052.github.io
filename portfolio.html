@@ -5,13 +5,17 @@
 
 <style>
 
-.portfolio-title {
+body{
+font-family: Arial;
+}
+
+.portfolio-title{
 text-align:center;
 margin-top:40px;
 font-size:28px;
 }
 
-.portfolio-buttons {
+.portfolio-buttons{
 text-align:center;
 margin-top:30px;
 }
@@ -56,48 +60,22 @@ box-shadow:0px 4px 15px rgba(0,0,0,0.3);
 
 <div class="portfolio-buttons">
 
-<button class="pf-btn" onclick="openPortfolio('PF1')">PF 1</button>
-
-<button class="pf-btn" onclick="openPortfolio('PF2')">PF 2</button>
-
-<button class="pf-btn" onclick="openPortfolio('PF3')">PF 3</button>
-
-<button class="pf-btn" onclick="openPortfolio('PF4')">PF 4</button>
+<button class="pf-btn">PF 1</button>
+<button class="pf-btn">PF 2</button>
+<button class="pf-btn">PF 3</button>
+<button class="pf-btn">PF 4</button>
 
 </div>
 
 <div class="image-preview">
-<img id="portfolioImage" src="portfolio_image.jpg" alt="Portfolio Image">
+
+<img src="portfolio_image.jpg" alt="Portfolio Image">
+
 </div>
-
-<script>
-
-function openPortfolio(pf){
-
-var img=document.getElementById("portfolioImage");
-
-if(pf=="PF1"){
-img.src="portfolio1.jpg";
-}
-
-else if(pf=="PF2"){
-img.src="portfolio2.jpg";
-}
-
-else if(pf=="PF3"){
-img.src="portfolio3.jpg";
-}
-
-else if(pf=="PF4"){
-img.src="portfolio4.jpg";
-}
-
-}
-
-</script>
 
 </body>
 </html>
+
 
 
 

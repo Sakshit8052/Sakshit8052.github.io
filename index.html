@@ -6,7 +6,15 @@
 
 <style>
 
- .btn{
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:6px;
+    background:#f5f5f5;
+}
+
+/* 🔥 BUTTON */
+.btn{
   padding:12px 25px;
   background:#0077cc;
   color:white;
@@ -18,70 +26,99 @@
 .btn:hover{
   background:#005fa3;
 }
- 
- body{ font-family: Arial, sans-serif;margin: 1px;
-            padding:6px;background:#f5f5f5;
-     }
-        nav a { color:black;
-               margin:15px;
-               font-size:38px;
-              }
 
+/* 🔥 NAV FIX */
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    background:#0077cc;
+    padding:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    padding:6px 10px;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+nav button{
+    font-size:16px;
+    padding:6px 12px;
+    cursor:pointer;
+    border:none;
+    border-radius:6px;
+}
+
+/* HEADER */
 header{
     background:#0077cc;
     padding:20px;
     text-align:center;
-}
-    
-nav button{
-    font-size:18px;
-    padding:8px 15px;
-    margin-left:10px;
-    cursor:pointer;
+    color:white;
 }
 
+/* SECTION */
+section{
+    padding:30px;
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
 
-section{ padding:30px;
-        max-width:900px;
-        margin:auto;
-        text-align:center; }
+/* IMAGE */
 img {
     width:80%;
     border-radius:10px;
     margin-top:20px;
 }
 
-        .accordion {
-            background-color: #0077cc;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            width: 100%;
-            text-align: center;
-            font-size: 38px;
-            border-radius: 7px;
-            margin: 15px auto;
-            border: none;
-        }
+/* ACCORDION */
+.accordion {
+    background-color: #0077cc;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    border-radius: 7px;
+    margin: 15px auto;
+    border: none;
+    transition:0.3s;
+}
 
-        .panel {
-            display: none;
-            padding: 15px;
-            background-color: white;
-            width: 40%;
-            text-align: left;
-            font-size: 28px;
-            margin: 15px auto;
-            border-radius: 7px;
-            box-shadow: 0 0 5px #aaa;
-        }
+.accordion:hover{
+    background:#005fa3;
+}
+
+.panel {
+    display: none;
+    padding: 15px;
+    background-color: white;
+    width: 60%;
+    text-align: left;
+    font-size: 20px;
+    margin: 10px auto;
+    border-radius: 7px;
+    box-shadow: 0 0 5px #aaa;
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- 🔊 HIDDEN AUTOPLAY AUDIO -->
+<!-- 🔊 AUDIO -->
 <audio id="bgAudio" autoplay muted loop>
     <source src="music.mp3.mp3" type="audio/mpeg">
 </audio>
@@ -95,101 +132,79 @@ img {
     <a href="about.html">About</a>
     <a href="benefits.html">Benefits</a>
     <a href="contact.html">Contact Us</a>
-    <a href="lion_history.html">Etc.</a>  
+    <a href="lion_history.html">Etc.</a>
 
-    <button onclick="alert('Hello this is Little Learners Trust, How may I help you?')"
-    style="background-color:white;font-size:20px;">Click Me</button>
- 
+    <button onclick="alert('Hello this is Little Learners Trust, How may I help you?')">Click Me</button>
+
     <button onclick="window.location='new_project.html'">New Project</button>
-     <button onclick="window.location='portfolio.html'">My portfolio</button>
-   <a href="https://sakshit8052.github.io/TripathiAirCoolers/" class="btn">
-  Visit Tripathi Air Coolers
-</a>
+
+    <button onclick="window.location='portfolio.html'">My portfolio</button>
+
+    <a href="https://sakshit8052.github.io/TripathiAirCoolers/" class="btn">
+        Visit Tripathi Air Coolers
+    </a>
 </nav>
 </header>
 
-    <img src="little_learners_trust_image.jpg"
-        alt="Little Learners Trust NGO"
-        style="float:right; width:340px; height:340px;">
+<!-- IMAGE -->
+<img src="little_learners_trust_image.jpg"
+alt="Little Learners Trust NGO"
+style="float:right; width:340px; height:340px;">
 
+<!-- CONTENT -->
+<section>
+    <h2>Welcome to Little Learners Trust</h2>
+    <p>We work to provide quality education to underprivileged children.</p>
+    <p>Little Learners Trust NGO is a beacon of hope.</p>
+    <p>We empower children with education and skills.</p>
+    <span style="font-size:80px;">&#129335;</span>
+</section>
 
-    <section>
-        <h2>Welcome to Little Learners Trust</h2>
-        <p>We work to provide quality education to underprivileged children.</p>
-        <p>Little Learners Trust NGO is a beacon of hope, shaping young minds with love, care, and education.</p>
-        <p>The organization empowers children by giving them tools they need to dream big and achieve even bigger.</p>
-        <p>With every lesson and every smile, Little Learners Trust builds a brighter future.</p>
-        <span style="font-size:100px;">&#129335;</span>
-    </section>
+<!-- ACCORDION -->
+<button class="accordion">Mission</button>
+<div class="panel">
+    <p>Provide free quality education.</p>
+    <p>Support underprivileged children.</p>
+    <p>Empower through learning.</p>
+</div>
 
-   
-    <button class="accordion">Mission</button>
-    <div class="panel">
-        <p>Provide free quality education.</p>
-        <p>Support underprivileged children.</p>
-        <p>Empower through learning.</p>
-        <p>Our mission is to provide accessible, holistic education.</p>
-    </div>
+<button class="accordion">Vision</button>
+<div class="panel">
+    <p>Build confident young minds.</p>
+    <p>Transform society through education.</p>
+</div>
 
-   
-    <button class="accordion">Vision</button>
-    <div class="panel">
-        <p>Build confident, skilled young minds.</p>
-        <p>Transform society through education.</p>
-        <p>Create a safe, joyful, and inspiring environment.</p>
-    </div>
-
-  
-    <button class="accordion">Benefits</button>
-    <div class="panel">
-        <p>Free education programs.</p>
-        <p>Skill development workshops.</p>
-        <p>Study material support.</p>
-        <p>Awareness & counseling sessions.</p>
-    </div>
+<button class="accordion">Benefits</button>
+<div class="panel">
+    <p>Free education programs.</p>
+    <p>Skill development workshops.</p>
+</div>
 
 <script>
 
-// 🔊 AUDIO UNMUTE AFTER FIRST CLICK
+/* 🔊 AUDIO FIX */
 document.body.addEventListener("click", function(){
     const audio = document.getElementById("bgAudio");
     audio.muted = false;
     audio.play();
 },{ once:true });
 
+/* ⚡ ACCORDION FIX */
+let acc = document.querySelectorAll(".accordion");
 
- function goCoolers(){
-  window.location.href="https://Sakshit8052/Sakshit8052.github.io/TripathiAirCoolers/";
-}
- 
+acc.forEach(btn=>{
+    btn.addEventListener("click", function(){
+        let panel = this.nextElementSibling;
+
+        if(panel.style.display === "block"){
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+});
+
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

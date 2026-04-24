@@ -9,33 +9,21 @@
 body{
     font-family: Arial, sans-serif;
     margin:0;
-    padding:6px;
-    background:#f5f5f5;
+    padding:0;
+    background: linear-gradient(135deg,#e0f2ff,#f5f5f5);
 }
 
-/* 🔥 BUTTON */
-.btn{
-  padding:12px 25px;
-  background:#0077cc;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
-  transition:0.3s;
-}
-.btn:hover{
-  background:#005fa3;
-}
-
-/* 🔥 NAV FIX */
+/* 🔥 GLASS NAV */
 nav{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    align-items:center;
     gap:12px;
-    background:#0077cc;
-    padding:10px;
+    background: rgba(0,119,204,0.9);
+    padding:12px;
+    backdrop-filter: blur(10px);
+    position:sticky;
+    top:0;
 }
 
 nav a{
@@ -43,74 +31,73 @@ nav a{
     text-decoration:none;
     font-size:18px;
     padding:6px 10px;
-    border-radius:6px;
-    transition:0.3s;
-}
-
-nav a:hover{
-    background:rgba(255,255,255,0.2);
-}
-
-nav button{
-    font-size:16px;
-    padding:6px 12px;
-    cursor:pointer;
-    border:none;
-    border-radius:6px;
 }
 
 /* HEADER */
 header{
-    background:#0077cc;
-    padding:20px;
+    background: linear-gradient(135deg,#0077cc,#00aaff);
+    padding:25px;
     text-align:center;
     color:white;
 }
 
-/* SECTION */
+/* HERO */
 section{
-    padding:30px;
+    padding:40px 20px;
     max-width:900px;
     margin:auto;
     text-align:center;
 }
 
 /* IMAGE */
-img {
+img{
     width:80%;
-    border-radius:10px;
+    border-radius:15px;
     margin-top:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* ACCORDION */
-.accordion {
-    background-color: #0077cc;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    width: 100%;
-    text-align: center;
-    font-size: 28px;
-    border-radius: 7px;
-    margin: 15px auto;
-    border: none;
+/* 💎 GLASS CARDS */
+.card{
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    border-radius:15px;
+    width:70%;
+    margin:20px auto;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    opacity:0;
+    transform:translateY(50px);
+    transition:0.8s ease;
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card h2{
+    color:#0077cc;
+}
+
+/* 🎯 PORTFOLIO */
+#portfolio{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.project{
+    background:white;
+    margin:15px auto;
+    width:70%;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
     transition:0.3s;
 }
 
-.accordion:hover{
-    background:#005fa3;
-}
-
-.panel {
-    display: none;
-    padding: 15px;
-    background-color: white;
-    width: 60%;
-    text-align: left;
-    font-size: 20px;
-    margin: 10px auto;
-    border-radius: 7px;
-    box-shadow: 0 0 5px #aaa;
+.project:hover{
+    transform:scale(1.03);
 }
 
 </style>
@@ -118,91 +105,72 @@ img {
 
 <body>
 
-<!-- 🔊 AUDIO -->
-<audio id="bgAudio" autoplay muted loop>
-    <source src="music.mp3.mp3" type="audio/mpeg">
-</audio>
-
 <header>
 <h1>Little Learners Trust</h1>
 <p>Education for Every Child</p>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="benefits.html">Benefits</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="lion_history.html">Etc.</a>
-
-    <button onclick="alert('Hello this is Little Learners Trust, How may I help you?')">Click Me</button>
-
-    <button onclick="window.location='new_project.html'">New Project</button>
-
-    <button onclick="window.location='portfolio.html'">My portfolio</button>
-
-    <a href="https://sakshit8052.github.io/TripathiAirCoolers/" class="btn">
-        Visit Tripathi Air Coolers
-    </a>
-</nav>
 </header>
 
-<!-- IMAGE -->
-<img src="little_learners_trust_image.jpg"
-alt="Little Learners Trust NGO"
-style="float:right; width:340px; height:340px;">
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Benefits</a>
+    <a href="#">Contact</a>
+</nav>
 
-<!-- CONTENT -->
 <section>
-    <h2>Welcome to Little Learners Trust</h2>
-    <p>We work to provide quality education to underprivileged children.</p>
-    <p>Little Learners Trust NGO is a beacon of hope.</p>
-    <p>We empower children with education and skills.</p>
-    <span style="font-size:80px;">&#129335;</span>
+<h2>Welcome to Little Learners Trust</h2>
+<p>We empower children through education & skills.</p>
+
+<img src="little_learners_trust_image.jpg">
 </section>
 
-<!-- ACCORDION -->
-<button class="accordion">Mission</button>
-<div class="panel">
+<!-- 💎 CARDS -->
+<div class="card">
+    <h2>Mission</h2>
     <p>Provide free quality education.</p>
     <p>Support underprivileged children.</p>
-    <p>Empower through learning.</p>
 </div>
 
-<button class="accordion">Vision</button>
-<div class="panel">
+<div class="card">
+    <h2>Vision</h2>
     <p>Build confident young minds.</p>
     <p>Transform society through education.</p>
 </div>
 
-<button class="accordion">Benefits</button>
-<div class="panel">
+<div class="card">
+    <h2>Benefits</h2>
     <p>Free education programs.</p>
     <p>Skill development workshops.</p>
 </div>
 
+<!-- 🌐 PORTFOLIO SECTION -->
+<div id="portfolio">
+    <h2>🌐 Our Projects</h2>
+
+    <div class="project">🎮 Math Rush Game</div>
+    <div class="project">🧠 AI Tic Tac Toe</div>
+    <div class="project">📊 Learning Portal</div>
+    <div class="project">🎨 Landing Page Design</div>
+</div>
+
 <script>
 
-/* 🔊 AUDIO FIX */
-document.body.addEventListener("click", function(){
-    const audio = document.getElementById("bgAudio");
-    audio.muted = false;
-    audio.play();
-},{ once:true });
+/* ✨ SCROLL REVEAL */
+const cards = document.querySelectorAll(".card");
 
-/* ⚡ ACCORDION FIX */
-let acc = document.querySelectorAll(".accordion");
+window.addEventListener("scroll", ()=>{
+    cards.forEach(c=>{
+        let top = c.getBoundingClientRect().top;
+        let windowHeight = window.innerHeight;
 
-acc.forEach(btn=>{
-    btn.addEventListener("click", function(){
-        let panel = this.nextElementSibling;
-
-        if(panel.style.display === "block"){
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
+        if(top < windowHeight - 100){
+            c.classList.add("show");
         }
     });
 });
+
+/* auto trigger on load */
+window.dispatchEvent(new Event("scroll"));
 
 </script>
 

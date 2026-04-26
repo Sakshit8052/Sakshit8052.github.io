@@ -1,0 +1,182 @@
+<!-- 🎮 GAME DEVELOPMENT SECTION START -->
+<section class="game-dev">
+
+<h2>🎮 Game Development</h2>
+
+<p class="intro">
+I create interactive web-based games using JavaScript with smart logic, 
+AI behavior and engaging UI design.
+</p>
+
+<!-- SKILLS -->
+<div class="grid">
+<div class="card">🧠 Game Logic</div>
+<div class="card">🤖 AI Behavior</div>
+<div class="card">🎨 Game UI Design</div>
+<div class="card">⚡ Animations & Effects</div>
+<div class="card">📱 Mobile Optimization</div>
+</div>
+
+<!-- TOOLS -->
+<h3>🛠️ Tools & Technologies</h3>
+<div class="tools">
+HTML • CSS • JavaScript • Canvas • Audio Effects
+</div>
+
+<!-- GAMES -->
+<h3>🔥 My Games</h3>
+
+<div class="grid">
+
+<div class="card project">
+  <h4>🎮 Tic Tac Toe ULTIMATE</h4>
+  <p>AI difficulty, multiplayer & animations</p>
+  <button onclick="alert('Open Game')">Play Game</button>
+</div>
+
+<div class="card project">
+  <h4>🧠 Math Rush PRO+</h4>
+  <p>Fast math game with AI race & scoring</p>
+  <button onclick="alert('Open Game')">Play Game</button>
+</div>
+
+<div class="card project">
+  <h4>🚀 Future Game</h4>
+  <p>More exciting games coming soon...</p>
+  <button disabled>Coming Soon</button>
+</div>
+
+</div>
+
+<!-- FEATURES -->
+<h3>⚔️ Game Features</h3>
+
+<div class="grid">
+<div class="card">✔ Smart AI Opponent</div>
+<div class="card">✔ Score System</div>
+<div class="card">✔ Animations & Effects</div>
+<div class="card">✔ Responsive Gameplay</div>
+</div>
+
+<!-- STYLE -->
+<h3>🎨 My Game Style</h3>
+
+<div class="grid">
+<div class="card">🔥 Fast & Engaging</div>
+<div class="card">✨ Visual Effects</div>
+<div class="card">🎮 Easy Controls</div>
+<div class="card">🧠 AI Challenges</div>
+</div>
+
+<!-- VISION -->
+<h3>🚀 Future Vision</h3>
+<div class="vision">
+I aim to build more advanced web games and interactive 
+learning-based gaming experiences.
+</div>
+
+</section>
+
+<style>
+
+/* 🎮 DARK SECTION */
+.game-dev{
+  padding:60px 20px;
+  text-align:center;
+  background:#050816;
+  color:white;
+}
+
+/* HEADINGS */
+.game-dev h2{
+  font-size:34px;
+  color:#00ffff;
+}
+
+.game-dev h3{
+  margin-top:30px;
+  color:#a5b4fc;
+}
+
+/* INTRO */
+.intro{
+  max-width:650px;
+  margin:auto;
+  opacity:0.8;
+  margin-bottom:30px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  max-width:1000px;
+  margin:20px auto;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  padding:20px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+
+/* HOVER */
+.card:hover{
+  transform:translateY(-6px) scale(1.05);
+  box-shadow:0 0 20px #00ffff;
+}
+
+/* BUTTON */
+.project button{
+  margin-top:10px;
+  padding:6px 14px;
+  border:none;
+  border-radius:12px;
+  background:#00ffff;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.project button:hover{
+  background:#00ffff;
+  box-shadow:0 0 15px #00ffff;
+}
+
+/* DISABLED BUTTON */
+button:disabled{
+  background:gray;
+  cursor:not-allowed;
+}
+
+/* TOOLS */
+.tools{
+  margin:15px;
+  font-size:18px;
+  color:#cbd5f5;
+}
+
+/* VISION */
+.vision{
+  margin:20px;
+  font-size:18px;
+  color:#cbd5f5;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .game-dev h2{
+    font-size:26px;
+  }
+}
+
+</style>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI/UX Portfolio</title>
+
+<style>
+body{
+margin:0;
+font-family:system-ui;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* 🌌 BACKGROUND */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* 🔝 NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:15px;
+padding:12px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:10;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:8px 12px;
+border-radius:8px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:#3b82f6;
+}
+
+/* 🧑 HERO */
+.hero{
+padding-top:120px;
+text-align:center;
+padding-bottom:40px;
+}
+
+.hero h1{
+font-size:40px;
+margin:0;
+}
+
+.hero p{
+opacity:0.7;
+max-width:600px;
+margin:auto;
+}
+
+.btn{
+margin-top:15px;
+padding:10px 18px;
+border:none;
+border-radius:10px;
+background:#22c55e;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* 🧊 SECTION */
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+h2{
+font-size:28px;
+color:#00ffff;
+}
+
+/* 🧩 GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
+}
+
+/* 📦 CARD */
+.card{
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(12px);
+padding:20px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 0 20px #00ffff;
+}
+
+/* 📊 SKILL BAR */
+.bar{
+height:8px;
+background:#1f2937;
+border-radius:10px;
+overflow:hidden;
+margin-top:8px;
+}
+
+.fill{
+height:100%;
+width:80%;
+background:#22c55e;
+}
+
+/* 📱 MOBILE */
+@media(max-width:600px){
+.hero h1{font-size:28px;}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<!-- NAV -->
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+<h1>👩‍💻 UI/UX Designer Portfolio</h1>
+<p>I design modern, interactive and user-friendly websites using creative UI/UX principles.</p>
+<button class="btn">View Projects</button>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>👤 About Me</h2>
+<div class="grid">
+<div class="card">
+<p>Hi! I am a web designer passionate about UI/UX design, AI experiments and game development.</p>
+</div>
+<div class="card">
+<p>I create modern websites with glass UI, animations and responsive layouts.</p>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>💻 Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🌐 NGO Website</h3>
+<p>Responsive educational website with modern UI.</p>
+</div>
+
+<div class="card">
+<h3>🤖 AI Experiments</h3>
+<p>Chatbot + voice assistant systems.</p>
+</div>
+
+<div class="card">
+<h3>🎮 Game UI</h3>
+<p>Interactive web games like Tic Tac Toe & Math Rush.</p>
+</div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>⚡ Skills</h2>
+
+<div class="grid">
+
+<div class="card">
+HTML
+<div class="bar"><div class="fill"></div></div>
+</div>
+
+<div class="card">
+CSS
+<div class="bar"><div class="fill"></div></div>
+</div>
+
+<div class="card">
+JavaScript
+<div class="bar"><div class="fill"></div></div>
+</div>
+
+</div>
+</section>
+
+<!-- BACKGROUND ANIMATION -->
+<script>
+const c=document.getElementById("bg");
+const ctx=c.getContext("2d");
+
+c.width=innerWidth;
+c.height=innerHeight;
+
+let p=[];
+
+for(let i=0;i<70;i++){
+p.push({
+x:Math.random()*c.width,
+y:Math.random()*c.height,
+r:2,
+dx:(Math.random()-0.5),
+dy:(Math.random()-0.5)
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,c.width,c.height);
+
+p.forEach(a=>{
+a.x+=a.dx;
+a.y+=a.dy;
+
+if(a.x<0||a.x>c.width)a.dx*=-1;
+if(a.y<0||a.y>c.height)a.dy*=-1;
+
+ctx.beginPath();
+ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
+ctx.fillStyle="white";
+ctx.fill();
+});
+
+requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+</body>
+</html>

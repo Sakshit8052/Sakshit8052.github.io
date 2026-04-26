@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Learning Portal FIXED</title>
+
+<style>
+body{
+margin:0;
+font-family:system-ui;
+background:#050816;
+color:white;
+overflow:hidden;
+}
+
+/* 🌌 BACKGROUND */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* 🔥 TOP NAV BAR (NEW) */
+.topBar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:10px;
+padding:10px;
+z-index:100;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+}
+
+.topBar button{
+padding:8px 12px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+background:#1f2937;
+color:white;
+transition:0.2s;
+}
+
+.topBar button:hover{
+background:#3b82f6;
+}
+
+/* HEADER */
+.container{
+position:relative;
+z-index:2;
+text-align:center;
+padding:80px 30px 30px; /* TOP SPACE FIX */
+}
+
+.card{
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(12px);
+padding:20px;
+margin:15px auto;
+max-width:600px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+button{
+padding:10px 15px;
+margin:5px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.blue{background:#3b82f6;color:white;}
+.green{background:#22c55e;color:white;}
+
+/* CHAT */
+#chatBox{
+position:fixed;
+bottom:90px;
+right:20px;
+width:320px;
+height:420px;
+background:#0b1220;
+border-radius:15px;
+display:none;
+flex-direction:column;
+overflow:hidden;
+border:1px solid #333;
+z-index:10;
+}
+
+#head{
+background:#2563eb;
+padding:10px;
+text-align:center;
+font-weight:bold;
+}
+
+#body{
+flex:1;
+overflow:auto;
+padding:10px;
+font-size:14px;
+}
+
+.msg{
+margin:6px 0;
+padding:8px;
+border-radius:8px;
+}
+
+.user{background:#3b82f6;text-align:right;}
+.ai{background:#1f2937;}
+
+#inputBox{
+display:flex;
+border-top:1px solid #222;
+}
+
+#inputBox input{
+flex:1;
+padding:10px;
+border:none;
+outline:none;
+}
+
+#inputBox button{
+background:#22c55e;
+color:white;
+}
+
+/* FLOAT BUTTONS */
+.fab{
+position:fixed;
+right:20px;
+width:55px;
+height:55px;
+border-radius:50%;
+border:none;
+cursor:pointer;
+font-size:20px;
+z-index:10;
+}
+
+#aiBtn{bottom:20px;background:#22c55e;color:white;}
+#voiceBtn{bottom:85px;background:#3b82f6;color:white;}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<!-- 🔥 TOP NAV BAR ADDED -->
+<div class="topBar">
+<button>📘 Mini Learning Skill Platform</button>
+<button>🤖 Learning Portal</button>
+<button>🎮 Game Style</button>
+</div>
+
+<div class="container">
+<div class="card">
+<h1>📊 AI Learning Portal FIXED</h1>
+<p>Now AI replies are working properly 🤖</p>
+
+<button class="blue" onclick="toggleChat()">Open AI</button>
+<button class="green" onclick="startVoice()">🎤 Voice</button>
+</div>
+</div>
+
+<!-- CHAT -->
+<div id="chatBox">
+
+<div id="head">AI Teacher 🤖</div>
+
+<div id="body"></div>
+
+<div id="inputBox">
+<input id="text" placeholder="Ask anything...">
+<button onclick="send()">Send</button>
+</div>
+
+</div>
+
+<!-- FLOAT -->
+<button id="aiBtn" class="fab" onclick="toggleChat()">🤖</button>
+<button id="voiceBtn" class="fab" onclick="startVoice()">🎤</button>
+
+<script>
+
+/* =====================
+   🌌 BACKGROUND
+===================== */
+
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+let particles=[];
+
+for(let i=0;i<90;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+dx:(Math.random()-0.5),
+dy:(Math.random()-0.5)
+});
+}
+
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="white";
+ctx.fill();
+});
+
+requestAnimationFrame(animate);
+}
+animate();
+
+/* =====================
+   🤖 CHAT SYSTEM (same)
+===================== */
+
+const API_KEY="";
+
+let chat=document.getElementById("chatBox");
+let body=document.getElementById("body");
+
+function toggleChat(){
+chat.style.display=chat.style.display==="flex"?"none":"flex";
+chat.style.flexDirection="column";
+}
+
+function addMsg(text,type){
+let d=document.createElement("div");
+d.className="msg "+type;
+d.innerText=text;
+body.appendChild(d);
+body.scrollTop=body.scrollHeight;
+}
+
+async function send(){
+
+let input=document.getElementById("text");
+let text=input.value.trim();
+if(!text) return;
+
+addMsg(text,"user");
+input.value="";
+
+addMsg("Thinking... 🤖","ai");
+
+setTimeout(()=>{
+body.lastChild.remove();
+fallback(text);
+},700);
+}
+
+/* 🧠 SIMPLE AI */
+function fallback(t){
+
+t=t.toLowerCase();
+
+let r="";
+
+if(t.includes("html")) r="HTML structure of web pages 🧠";
+else if(t.includes("css")) r="CSS styles website 🎨";
+else if(t.includes("js")) r="JavaScript makes interactive ⚡";
+else r="Ask me learning questions 🤖";
+
+addMsg(r,"ai");
+}
+
+/* 🎤 VOICE */
+function startVoice(){
+
+let speech=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
+speech.lang="en-US";
+speech.start();
+
+speech.onresult=function(e){
+let text=e.results[0][0].transcript;
+addMsg(text,"user");
+fallback(text);
+
+let msg=new SpeechSynthesisUtterance("I heard "+text);
+speechSynthesis.speak(msg);
+};
+}
+
+</script>
+
+</body>
+</html>

@@ -3,36 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <title>Sakshi tiwari.html</title>
-    <style>
-         img { width: 30%;
-            height: 40%;
-        }
-body { font-size: 30px;
+   <style>
+img {
+    width: 30%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+body {
+    font-size: 28px;
     font-style: italic;
-    background-color: lightcyan;
+    background: linear-gradient(135deg, #d7f7ff, #f0f8ff);
+    margin: 0;
+    padding: 0;
+    color: #222;
 }
-.Keypoints { font-size: 35px;
-    background-color: darkslategray;
+
+/* KEYPOINT BOX */
+.Keypoints {
+    font-size: 28px;
+    background: rgba(47,79,79,0.95);
+    color: white;
     text-align: center;
-}
-header { padding: 18px;
+    padding: 20px;
     margin: 20px;
-a:link{ background-color: purple;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+
+/* HEADER */
+header {
+    padding: 18px;
+    margin: 0;
+    background: linear-gradient(135deg, #0077cc, #00aaff);
+    color: white;
+    text-align: center;
+    border-bottom: 3px solid rgba(0,0,0,0.2);
 }
+
+/* NAV LINKS */
+nav a {
+    color: white;
+    margin: 10px;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+}
+
+/* FACT SHEET */
+#FactSheet {
+    background: linear-gradient(135deg, #00bfff, #0077cc);
+    font-size: 28px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 12px;
+    margin: 20px;
+}
+
+/* TABLE */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th {
+    padding: 12px 20px;
+    font-size: 24px;
+}
+
+/* DIV CENTER SECTIONS */
+div[style*="background-color: deepskyblue"] {
+    padding: 15px;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+/* LIST CLEAN */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+/* LINKS */
+a {
+    color: #0077cc;
+    font-weight: bold;
+}
+
 a:hover {
     color: red;
-    background-color: transparent;
-    text-decoration: underline;
 }
-#FactSheet {
-    background-color: deepskyblue;
-    font-size: 30px;
-    padding: 20px;
-     text-align: center;
 
+/* RESPONSIVE */
+@media(max-width:600px){
+    body { font-size: 20px; }
+    img { width: 80%; }
+    .Keypoints { font-size: 20px; }
+    nav a { font-size: 16px; }
 }
-    </style>
+</style>
 </head>
 <body>
     <header>

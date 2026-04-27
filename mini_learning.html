@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Learning Portal - Mini Skill Upgrade</title>
+
+<style>
+body{
+margin:0;
+font-family:system-ui;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+.topBar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:10px;
+padding:10px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:10;
+}
+
+.topBar button{
+padding:8px 12px;
+border:none;
+border-radius:10px;
+background:#1f2937;
+color:white;
+cursor:pointer;
+}
+
+.container{
+padding:80px 15px 20px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(12px);
+padding:15px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+button{
+padding:8px 10px;
+margin-top:8px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.learn{background:#22c55e;color:white;}
+.quiz{background:#3b82f6;color:white;}
+.hint{background:#f59e0b;color:black;}
+
+.bar{
+height:8px;
+background:#1f2937;
+border-radius:10px;
+margin-top:8px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+width:0%;
+background:#22c55e;
+transition:0.5s;
+}
+
+#quizBox{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#111827;
+padding:20px;
+border-radius:15px;
+display:none;
+z-index:20;
+width:300px;
+}
+
+.option{
+background:#1f2937;
+padding:10px;
+margin:6px;
+cursor:pointer;
+border-radius:8px;
+}
+
+.option:hover{
+background:#3b82f6;
+}
+
+#badge{
+margin-top:15px;
+font-size:18px;
+color:#facc15;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="topBar">
+<button>📘 Mini Learning</button>
+<button>🤖 AI Portal</button>
+<button>🎮 Game Mode</button>
+</div>
+
+<div class="container">
+
+<h2>📘 Mini Learning Skill Platform</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>HTML Basics</h3>
+<div class="bar"><div id="xp1" class="fill"></div></div>
+<button class="learn" onclick="gainXP(1)">Start Learn</button>
+<button class="quiz" onclick="openQuiz('html')">Quiz</button>
+<button class="hint" onclick="hint('HTML structures web pages')">AI Hint</button>
+</div>
+
+<div class="card">
+<h3>CSS Styling</h3>
+<div class="bar"><div id="xp2" class="fill"></div></div>
+<button class="learn" onclick="gainXP(2)">Start Learn</button>
+<button class="quiz" onclick="openQuiz('css')">Quiz</button>
+<button class="hint" onclick="hint('CSS styles the design')">AI Hint</button>
+</div>
+
+<div class="card">
+<h3>JavaScript</h3>
+<div class="bar"><div id="xp3" class="fill"></div></div>
+<button class="learn" onclick="gainXP(3)">Start Learn</button>
+<button class="quiz" onclick="openQuiz('js')">Quiz</button>
+<button class="hint" onclick="hint('JS makes website interactive')">AI Hint</button>
+</div>
+
+</div>
+
+<div id="badge">🏅 Badge: Beginner</div>
+
+</div>
+
+<!-- QUIZ -->
+<div id="quizBox">
+<h3 id="q">Question</h3>
+<div class="option"></div>
+<div class="option"></div>
+<div class="option"></div>
+</div>
+
+<script>
+
+/* XP SYSTEM */
+let xp=[0,0,0];
+
+function gainXP(i){
+xp[i-1]+=20;
+if(xp[i-1]>100) xp[i-1]=100;
+document.getElementById("xp"+i).style.width=xp[i-1]+"%";
+checkBadge();
+}
+
+function checkBadge(){
+let total=(xp[0]+xp[1]+xp[2])/3;
+let b=document.getElementById("badge");
+
+if(total>80) b.innerText="🏆 Badge: Master";
+else if(total>50) b.innerText="🥇 Badge: Expert";
+else if(total>20) b.innerText="🥈 Badge: Learner";
+else b.innerText="🏅 Badge: Beginner";
+}
+
+/* QUIZ DATA */
+let quizzes={
+html:[
+{q:"HTML stands for?",options:["Hyper Text Markup Language","High Tool Markup Language","Home Tool"],correct:0},
+{q:"HTML is used for?",options:["Structure","Styling","Database"],correct:0},
+{q:"<h1> tag is?",options:["Heading","Image","Link"],correct:0},
+{q:"<p> tag?",options:["Paragraph","Page","Print"],correct:0},
+{q:"HTML extension?",options:[".html",".css",".js"],correct:0},
+{q:"<img>?",options:["Image","Text","Video"],correct:0},
+{q:"<a> tag?",options:["Link","List","Line"],correct:0},
+{q:"<ul>?",options:["List","User","Upper"],correct:0},
+{q:"HTML is?",options:["Markup","Programming","DB"],correct:0},
+{q:"<br>?",options:["Line break","Bold","Bg"],correct:0}
+],
+css:[
+{q:"CSS is for?",options:["Styling","Logic","DB"],correct:0},
+{q:"CSS stands?",options:["Cascading Style Sheets","Creative Style","Color Style"],correct:0},
+{q:"Color change?",options:["color","font","margin"],correct:0},
+{q:"Background?",options:["background","font","border"],correct:0},
+{q:"CSS extension?",options:[".css",".html",".js"],correct:0},
+{q:"Spacing?",options:["margin","color","text"],correct:0},
+{q:"Bold?",options:["font-weight","color","padding"],correct:0},
+{q:"Align?",options:["text-align","margin","border"],correct:0},
+{q:"CSS works with?",options:["HTML","DB","AI"],correct:0},
+{q:"Border?",options:["border","color","padding"],correct:0}
+],
+js:[
+{q:"JS is for?",options:["Interactivity","Style","Structure"],correct:0},
+{q:"Runs in?",options:["Browser","Server only","DB"],correct:0},
+{q:"alert()?",options:["Popup","Style","Save"],correct:0},
+{q:"console.log?",options:["Debug","Design","Anim"],correct:0},
+{q:"JS ext?",options:[".js",".html",".css"],correct:0},
+{q:"Variable?",options:["let","style","div"],correct:0},
+{q:"JS changes?",options:["HTML","Only CSS","Nothing"],correct:0},
+{q:"Loop?",options:["for","color","border"],correct:0},
+{q:"Click?",options:["onclick","onstyle","oncss"],correct:0},
+{q:"JS is?",options:["Programming","Markup","DB"],correct:0}
+]
+};
+
+let currentQuiz=null;
+
+function openQuiz(type){
+document.getElementById("quizBox").style.display="block";
+
+let list=quizzes[type];
+let q=list[Math.floor(Math.random()*list.length)];
+
+currentQuiz=q;
+
+document.getElementById("q").innerText=q.q;
+
+let opts=document.querySelectorAll(".option");
+
+opts.forEach((el,i)=>{
+el.innerText=q.options[i];
+el.onclick=()=>checkAnswer(i);
+});
+}
+
+function checkAnswer(i){
+if(i===currentQuiz.correct){
+alert("✅ Correct +XP");
+}else{
+alert("❌ Wrong");
+}
+document.getElementById("quizBox").style.display="none";
+}
+
+function hint(text){
+alert("🤖 AI Hint: "+text);
+}
+
+/* BACKGROUND */
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+let p=[];
+for(let i=0;i<60;i++){
+p.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:2});
+}
+
+function anim(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+p.forEach(a=>{
+ctx.beginPath();
+ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
+ctx.fillStyle="white";
+ctx.fill();
+});
+requestAnimationFrame(anim);
+}
+anim();
+
+</script>
+
+</body>
+</html>

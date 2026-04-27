@@ -25,9 +25,9 @@ body{
   justify-content:center;
   gap:15px;
   padding:12px;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(12px);
-  z-index:10;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(14px);
+  z-index:100;
 }
 
 .topBar button{
@@ -48,7 +48,7 @@ body{
 
 /* CONTAINER */
 .container{
-  padding-top:80px;
+  padding-top:90px;
 }
 
 /* HERO */
@@ -57,24 +57,26 @@ body{
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
-  padding:40px 20px;
+  padding:50px 20px;
   gap:40px;
 }
 
 .hero-text{
-  max-width:400px;
+  max-width:420px;
 }
 
 .hero-text h1{
-  font-size:32px;
+  font-size:34px;
+  margin-bottom:10px;
 }
 
 .hero-text p{
-  opacity:0.8;
+  opacity:0.85;
+  line-height:1.5;
 }
 
 .profile{
-  width:160px;
+  width:170px;
   border-radius:50%;
   box-shadow:0 0 25px cyan;
   animation:float 3s ease-in-out infinite;
@@ -85,12 +87,17 @@ body{
   50%{ transform:translateY(-10px); }
 }
 
-/* CARDS */
+/* SECTIONS */
 .section{
-  padding:30px 20px;
+  padding:40px 20px;
   text-align:center;
 }
 
+.section h2{
+  margin-bottom:20px;
+}
+
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -99,9 +106,10 @@ body{
   margin:auto;
 }
 
+/* CARD */
 .card{
   background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
   padding:20px;
   border-radius:15px;
   transition:0.3s;
@@ -109,7 +117,7 @@ body{
 }
 
 .card:hover{
-  transform:scale(1.05);
+  transform:translateY(-6px) scale(1.04);
   box-shadow:0 0 20px cyan;
 }
 
@@ -122,6 +130,26 @@ body{
 /* PROJECT */
 .project{
   font-size:16px;
+  text-decoration:none;
+  color:white;
+  display:block;
+}
+
+/* BUTTON FIX */
+button{
+  margin-top:10px;
+  padding:8px 14px;
+  border:none;
+  border-radius:10px;
+  background:cyan;
+  color:black;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+button:hover{
+  box-shadow:0 0 15px cyan;
 }
 
 /* FOOTER */
@@ -135,6 +163,7 @@ body{
 @media(max-width:600px){
   .hero-text h1{ font-size:24px; }
   .profile{ width:120px; }
+  .container{ padding-top:100px; }
 }
 
 </style>
@@ -175,7 +204,7 @@ body{
    <a href="web_designing.html" class="project">📊 Web Designing</a>
    <a href="game_development.html" class="project">📊 Game Devolopment</a>
    <a href="ai_experment.html" class="project">📊 AI Experiments</a>
-  <a href="ui_ux_design.html" class="project">📊 UI/UX Design</a>
+   <a href="ui_ux_design.html" class="project">📊 UI/UX Design</a>
 
   </div>
 </div>

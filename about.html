@@ -1,137 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About- Little Learners Trust</title>
-    
+<meta charset="UTF-8">
+<title>About - Little Learners Trust</title>
+
 <style>
-    body{ font-family: Arial, sans-serif;margin: 1px;
-            padding:6px;background:#f5f5f5;
-        }
-        header { background: #0077cc;
-        padding: 20px; color: black;text-align: center;
-        }
-        nav a { color:black; margin:15px;
-               font-size:38px;}
-    section { padding:20px;
-                 text-align:center; }
-                  color:black;
-                 }
-    h2 { color:#0077cc;}
-    .according {
-        background-color: #0077cc;
-        color:white;
-        padding:20px;
-        cursor: pointer;
-        width:250px;
-        text-align:center;
-        font-size:38px;
-        border-radius:10px;
-        margin-top: 5px;
-    }
-    .panel {
-        padding: 10px;
-        background-color:white;
-        margin-top: 5px;
-        border-radius:10px;
-        font-size:28px;
-    
+
+/* =========================
+   🌐 GLOBAL UI IMPROVEMENT
+========================= */
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg,#e0f2ff,#f5f5f5);
+    color:#222;
+}
+
+/* HEADER */
+header{
+    background: linear-gradient(135deg,#0077cc,#00aaff);
+    padding:25px;
+    color:white;
+    text-align:center;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    padding:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    padding:6px 10px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    text-shadow:0 0 10px white;
+}
+
+/* SECTION */
+section{
+    padding:25px;
+    text-align:center;
+}
+
+/* TEXT FIX */
+h2{
+    color:#0077cc;
+}
+
+/* =========================
+   🔥 ACCORDION FIX
+========================= */
+.according{
+    background: linear-gradient(135deg,#0077cc,#005fa3);
+    color:white;
+    padding:15px;
+    cursor:pointer;
+    width:260px;
+    text-align:center;
+    font-size:24px;
+    border-radius:12px;
+    margin:15px auto;
+    display:block;
+    transition:0.3s;
+    border:none;
+}
+
+.according:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px rgba(0,119,204,0.6);
+}
+
+/* PANEL FIX */
+.panel{
+    display:none;
+    padding:15px;
+    background:white;
+    margin:10px auto;
+    border-radius:12px;
+    font-size:18px;
+    max-width:700px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* IMAGE FIX */
+.panel img{
+    float:right;
+    width:220px;
+    height:auto;
+    border-radius:10px;
+    margin-left:10px;
+}
+
+/* BACK LINK */
+a{
+    display:inline-block;
+    margin:20px;
+    text-decoration:none;
+    color:#0077cc;
+    font-weight:bold;
+}
+
 </style>
-
-    
 </head>
-<body>
-    <header>
-    <h1> Little Learners Trust</h1>
-    <p>Education for Every Child </p>
-    <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="benefits.html">Benefits</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="lion_history.html">Etc</a>
-    <button onclick="alert('Hello this is Little Learners Trust, How may i help you?')" style="background-color: rebeccapurple;font-size: 40px;
-">Click Me</button>
- </nav>
-    </header>
-    <section>
-<h2>About Little Learners Trust</h2>
-<p style="color:black;">Little Learners Trust lights the path where young minds discover their wings.</p>
-<p style="color:black;">Little Learners Trust is an NGO focused on providing education to children in need.</p>
-<p style="color:black;">It believes that every child deserves a chance- and they work every day to  make 
-   that chance a reality. </p></section>
-    
-    <button class="according"> Mission</button>
-    <div class="panel">
-        <pre>
-     <img src="Little_Learner_Trust.avif"
-     alt=" NGO Mission"
-     style="float: right;width: 360px;height: 380px;">
-    
-        Provide free and quality education.<span style='font-size:40px;'>&#128212;</span><span style='font-size:40px;'>&#128212;</span>
-        
-       Support underprivileged children.<span style='font-size:40px;'>&#128218;</span><span style='font-size:40px;'>&#128218;</span>
-        
-       Creat a bright future through a learning.<span style='font-size:40px;'>&#127776;</span><span style='font-size:40px;'>&#127776;</span>
 
-       Also to creat a great learnig, great thinking and<br>
-        intellectual development.<span style='font-size:40px;'>&#129335;</span><span style='font-size:40px;'>&#128587;</span>
-        </pre>
-    </div>
-    <form action="./lion_history.html">
-<a href="index.html"><- Back to Home </a>
+<body>
+
+<header>
+<h1>Little Learners Trust</h1>
+<p>Education for Every Child</p>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="benefits.html">Benefits</a>
+<a href="contact.html">Contact Us</a>
+<a href="lion_history.html">Etc</a>
+</nav>
+
+</header>
+
+<section>
+<h2>About Little Learners Trust</h2>
+<p>Little Learners Trust lights the path where young minds discover their wings.</p>
+<p>It is an NGO focused on providing education to children in need.</p>
+<p>Every child deserves a chance — we make that possible.</p>
+</section>
+
+<!-- ACCORDION -->
+<button class="according" onclick="togglePanel()">Mission</button>
+
+<div class="panel" id="panel">
+
+<img src="Little_Learner_Trust.avif" alt="Mission">
+
+<p>📘 Provide free and quality education.</p>
+<p>📚 Support underprivileged children.</p>
+<p>🌟 Build bright future through learning.</p>
+<p>🧠 Develop thinking & creativity.</p>
+
+</div>
+
+<!-- BACK -->
+<a href="index.html">⬅ Back to Home</a>
+
+<script>
+function togglePanel(){
+    let p = document.getElementById("panel");
+    p.style.display = (p.style.display === "block") ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
-  
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

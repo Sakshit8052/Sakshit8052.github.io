@@ -24,13 +24,20 @@ nav{
     backdrop-filter: blur(10px);
     position:sticky;
     top:0;
+    z-index:100;
 }
 
 nav a{
     color:white;
     text-decoration:none;
     font-size:18px;
-    padding:6px 10px;
+    padding:6px 12px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,0.2);
 }
 
 /* HEADER */
@@ -52,6 +59,7 @@ section{
 /* IMAGE */
 img{
     width:80%;
+    max-width:400px;
     border-radius:15px;
     margin-top:20px;
     box-shadow:0 10px 20px rgba(0,0,0,0.2);
@@ -63,6 +71,7 @@ img{
     backdrop-filter: blur(10px);
     border-radius:15px;
     width:70%;
+    max-width:700px;
     margin:20px auto;
     padding:20px;
     box-shadow:0 10px 25px rgba(0,0,0,0.1);
@@ -90,6 +99,7 @@ img{
     background:white;
     margin:15px auto;
     width:70%;
+    max-width:700px;
     padding:15px;
     border-radius:12px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
@@ -98,6 +108,43 @@ img{
 
 .project:hover{
     transform:scale(1.03);
+}
+
+/* BUTTON FIX */
+button{
+    padding:8px 14px;
+    border:none;
+    border-radius:8px;
+    background:#0077cc;
+    color:white;
+    cursor:pointer;
+    margin-top:10px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#005fa3;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width:600px){
+
+    .card, .project{
+        width:90%;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    img{
+        width:95%;
+    }
+
+    header h1{
+        font-size:22px;
+    }
+
 }
 
 </style>

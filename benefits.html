@@ -1,107 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Benefits - Little Learners Trust</title>
-    <style>
-         }
-         body{ font-family: Arial, sans-serif;margin: 1px;
-            padding:6px;background:#f5f5f5;
-        }
-        header { background: #0077cc;
-        padding: 20px; color: black;text-align: center;
-        }
-        nav a { color:black; margin:15px;
-               font-size:38px;}
-        nav a { color:black; margin:15px;
-               font-size:38px;}
-        }
-        .panel { background-color:#f5f5f5;
-                padding:25px;
-            }
-        .panel li {
-            padding:25px;
-            font-size:30px;
-        }
-   </style>
-</head>
-<body>
-    <header>
-    <h1> Little Learners Trust</h1>
-    <p>Education for Every Child </p>
-    <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="benefits.html">Benefits</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="lion_history.html">Etc</a>
-    <button onclick="alert('Hello this is Little Learners Trust, How may i help you?')" style="background-color: rebeccapurple;font-size: 40px;
-">Click Me</button>   
- </nav>
-    </header>
-<h2 style="background-color:#0077cc;font-size:38px;"><u>Benefits</u></h2>
-    <div style="font-size:28px;text-align:left;background-color:white;color:black;">
-      <img src="LITTLE LEARNER.JPG" 
-          alt"little learners trust"  style="float: right;width: 350px;height: 380px;"> 
-<ul>
-      <p><li> Creates awareness about the importance of <b>education</b>.</li></p>
-      <p><li> Reduces schools dropout rates and promotes long-term education.</li></p>
-      <p><li> Build a more educated and empowered future generation.</li></p>
-      <p><li> Offers educational supports that reduces financial stress on families.</li></p>
-      <p><li> Guides parents on children's leaning and development.</li></p>
-      <p><li> Provides a reliable, supportive environment for their child growths.</li></p>
-      <p><li> Promotes equality by giving by giving every child a fair chance to learn.</li></p>
-      <p><li> Helps break the cycle of poverty through <b>Education</b></li></p>
-</ul> 
-    </div>
-      <a href="index.html"><- Back to Home</a>
-         <span style='font-size:100px;align:center;'>&#128214;</span>
+<style>
 
-</body>
+/* =========================
+   🌐 GLOBAL FIX
+========================= */
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg,#e0f2ff,#f5f5f5);
+    color:#222;
+}
 
-</html>
+/* =========================
+   🔥 HEADER UPGRADE
+========================= */
+header{
+    background: linear-gradient(135deg,#0077cc,#00aaff);
+    padding:25px;
+    color:white;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
 
+/* =========================
+   🧭 NAV IMPROVE
+========================= */
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    padding-top:10px;
+}
 
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    padding:6px 10px;
+    transition:0.3s;
+}
 
+nav a:hover{
+    text-shadow:0 0 10px white;
+}
 
+/* =========================
+   🎯 HEADING STYLE
+========================= */
+h2{
+    background: linear-gradient(135deg,#0077cc,#005fa3);
+    font-size:30px;
+    color:white;
+    padding:10px;
+    text-align:center;
+    margin:0;
+}
 
+/* =========================
+   📦 CONTENT BOX IMPROVE
+========================= */
+div[style]{
+    font-size:20px !important;
+    text-align:left;
+    background:rgba(255,255,255,0.9) !important;
+    color:black !important;
+    padding:20px;
+    border-radius:15px;
+    max-width:900px;
+    margin:20px auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
 
+/* =========================
+   📸 IMAGE FIX
+========================= */
+img{
+    float:right;
+    width:260px !important;
+    height:auto !important;
+    border-radius:12px;
+    margin-left:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
 
+/* =========================
+   📋 LIST STYLE
+========================= */
+ul{
+    padding-left:20px;
+}
 
+li{
+    margin-bottom:12px;
+    line-height:1.5;
+}
 
+/* =========================
+   🔘 BUTTON IMPROVE
+========================= */
+button{
+    border:none;
+    border-radius:10px;
+    padding:10px 15px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
+    transition:0.3s;
+}
 
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #9333ea;
+}
 
+/* =========================
+   🔙 BACK LINK
+========================= */
+a{
+    display:inline-block;
+    margin:20px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#0077cc;
+    transition:0.3s;
+}
 
+a:hover{
+    text-decoration:underline;
+}
 
+/* =========================
+   📱 MOBILE RESPONSIVE
+========================= */
+@media(max-width:600px){
 
+    nav a{
+        font-size:16px;
+    }
 
+    img{
+        float:none;
+        display:block;
+        margin:auto;
+        width:80% !important;
+    }
 
+    div[style]{
+        font-size:18px !important;
+    }
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</style>

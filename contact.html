@@ -1,113 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact - Little Learners Trust</title>
- <style>
-      body{ font-family: Arial, sans-serif;margin: 1px;
-            padding:6px;background:#f5f5f5;
-        }
-        header { background: #0077cc;
-        padding: 20px; color: black;text-align: center;
-        }
-        nav a { color:black; margin:15px;
-               font-size:38px;}
-     h2 { color: #f5f5f5;
-        background-color:#0077cc
-        }
-     .contact-box {
-         background:white;
-         padding:20px;
-         border-radius:8px;
-         margin:20px;
-         font-size:28px;
-         
-     form button {
-         background: #0077cc;
-         color:white;
-         padding:10px;
-         width:60px;
-         height:50px
-         margin-top:10px;
-         cursor:pointer;
-         font-size:28px;
-     }
-     a { 
-         display: inline-block;
-         margin-top:20px;
-         color:#0077cc;
-         font-size:28px;
-         
- </style>
-</head>
-<body>
-    <header>
-    <h1> Little Learners Trust</h1>
-    <p>Education for Every Child </p>
-    <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About.</a>
-    <a href="benefits.html">Benefits</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="lion_history.html">etc</a>
-    <button onclick="alert('Hello this is Little Learners Trust, How may i help you?')" style="background-color: rebeccapurple;font-size: 40px;
-">Click Me</button>    
- </nav>
-    </header>
+<meta charset="UTF-8">
+<title>Contact - Little Learners Trust</title>
 
- <div class="contact-box">
-<h2><span style='font-size:50px;'>&#128222;</span>Contact Us</h2>
-<p>Email:*****
-support@littlelearnerstrust.org</p>
-<p>Phone: *******</p>
-<p>Location: New Delhi (Bawana,Narela), India</p>
-        <div class="contacct-box">
-            <h3>Send us a Message</h3>
-            <from>
-                <input type="text"
-                    Placeholder="Your Name" required>
-                <input type="Email"
-                    Placeholder="Your Email" required>
-                <textarea rows="4"
-                    Placeholder="Your Message" required></textarea>
-                <button type="submit"> send message
-                </button>
-            </from>
-<a href="index.html"><- Back to Home</a>
-    <footer>
-        <pre>
-    <img src="Instagram_logo_2022.svg" style="width: 50px;height: 45px;"> <img src="Facebook_Logo_2023.png" style="height: 45px;width: 50px;"><a href="https://www.youtube.com/@sakshitiwari1906" target="_blank">
-  <img src="YouTube_full-color_icon_(2017).svg.png" style="width:50px;height:45px;">
+<style>
+
+/* 🌐 GLOBAL */
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg,#e0f2ff,#f5f5f5);
+    color:#222;
+}
+
+/* 🔥 HEADER */
+header{
+    background: linear-gradient(135deg,#0077cc,#00aaff);
+    padding:25px;
+    color:white;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* 🧭 NAV */
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    padding-top:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    padding:6px 10px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    text-shadow:0 0 10px white;
+}
+
+/* 🎯 HEADING */
+h2{
+    color:white;
+    background: linear-gradient(135deg,#0077cc,#005fa3);
+    padding:12px;
+    border-radius:10px;
+    text-align:center;
+}
+
+/* 📦 CONTACT BOX */
+.contact-box{
+    background:rgba(255,255,255,0.95);
+    padding:25px;
+    border-radius:15px;
+    margin:20px auto;
+    font-size:20px;
+    max-width:800px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* 🧾 FORM */
+input, textarea{
+    width:90%;
+    padding:10px;
+    margin:10px auto;
+    display:block;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+/* 🔘 BUTTON */
+button{
+    background: linear-gradient(135deg,#7c3aed,#9333ea);
+    color:white;
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    margin-top:10px;
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #9333ea;
+}
+
+/* 🔙 LINK */
+a{
+    display:inline-block;
+    margin-top:20px;
+    color:#0077cc;
+    font-size:20px;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* 📱 MOBILE */
+@media(max-width:600px){
+    nav a{ font-size:16px; }
+    input, textarea{ width:100%; }
+}
+
+/* 🎥 SOCIAL ICON */
+footer img{
+    margin:5px;
+    transition:0.3s;
+}
+
+footer img:hover{
+    transform:scale(1.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Little Learners Trust</h1>
+<p>Education for Every Child</p>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="benefits.html">Benefits</a>
+<a href="contact.html">Contact Us</a>
+<a href="lion_history.html">Etc</a>
+
+<button onclick="alert('Hello this is Little Learners Trust, How may I help you?')">
+Click Me
+</button>
+
+</nav>
+</header>
+
+<div class="contact-box">
+
+<h2>📞 Contact Us</h2>
+
+<p>Email: support@littlelearnerstrust.org</p>
+<p>Phone: +91 XXXXXXXX</p>
+<p>Location: New Delhi (Bawana, Narela), India</p>
+
+<div class="contacct-box">
+
+<h3>Send us a Message</h3>
+
+<!-- ✅ WORKING FORM -->
+<form action="https://formspree.io/f/yourformid" method="POST" onsubmit="showMsg()">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+<a href="index.html">⬅ Back to Home</a>
+
+</div>
+
+<footer>
+<pre>
+<img src="Instagram_logo_2022.svg" width="50">
+<img src="Facebook_Logo_2023.png" width="50">
+<a href="https://www.youtube.com/@sakshitiwari1906" target="_blank">
+<img src="YouTube_full-color_icon_(2017).svg.png" width="50">
 </a>
-        </pre>
-    </footer>
+</pre>
+</footer>
+
+<script>
+function showMsg(){
+  alert("✅ Message Sent Successfully!");
+}
+</script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

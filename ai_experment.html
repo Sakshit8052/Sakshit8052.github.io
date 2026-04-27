@@ -1,0 +1,350 @@
+<!-- 🤖 AI EXPERIMENTS SECTION START -->
+<section class="ai-section">
+
+<h2>🤖 AI Experiments Lab</h2>
+
+<p class="intro">
+I build interactive AI-based web systems like chatbots, voice assistants 
+and smart learning tools using JavaScript.
+</p>
+
+<!-- AI FEATURES -->
+<div class="grid">
+
+<div class="card">💬 AI Chat System</div>
+<div class="card">🎤 Voice Assistant</div>
+<div class="card">🧠 Smart Logic AI</div>
+<div class="card">⚡ Real-time Interaction</div>
+
+</div>
+
+<!-- LIVE DEMO BOX -->
+<div class="demo-box">
+
+<h3>🔥 Live AI Demo</h3>
+<p>Try my AI chatbot + voice assistant system</p>
+
+<button onclick="toggleChat()">💬 Open Chat AI</button>
+<button onclick="startVoice()">🎤 Voice AI</button>
+
+</div>
+
+<!-- PROJECTS -->
+<h3>🚀 AI Projects</h3>
+
+<div class="grid">
+
+<div class="card project">
+<h4>💬 Smart Chat AI</h4>
+<p>Rule-based AI chat assistant with instant replies</p>
+<button onclick="toggleChat()">Try Now</button>
+</div>
+
+<div class="card project">
+<h4>🎤 Voice AI Assistant</h4>
+<p>Speech recognition + speech response system</p>
+<button onclick="startVoice()">Try Voice</button>
+</div>
+
+<div class="card project">
+<h4>🧠 Learning AI Bot</h4>
+<p>Educational AI for learning HTML, CSS & JS</p>
+<button disabled>Coming Soon</button>
+</div>
+
+</div>
+
+<!-- SKILLS -->
+<h3>⚙️ AI Skills Used</h3>
+
+<div class="grid">
+
+<div class="card">🧠 JavaScript Logic</div>
+<div class="card">🎤 Web Speech API</div>
+<div class="card">💬 Chat UI Design</div>
+<div class="card">⚡ Event Handling</div>
+
+</div>
+
+<!-- STYLE -->
+<h3>🎨 UI Style</h3>
+
+<div class="grid">
+
+<div class="card">🌑 Dark Glass UI</div>
+<div class="card">✨ Neon Effects</div>
+<div class="card">📱 Mobile Friendly</div>
+<div class="card">🚀 Smooth Animations</div>
+
+</div>
+
+</section>
+
+<!-- 🎨 STYLES -->
+<style>
+
+.ai-section{
+  padding:60px 20px;
+  text-align:center;
+  background:#050816;
+  color:white;
+}
+
+.ai-section h2{
+  font-size:34px;
+  color:#00ffff;
+}
+
+.intro{
+  max-width:650px;
+  margin:auto;
+  opacity:0.8;
+  margin-bottom:30px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  max-width:1000px;
+  margin:20px auto;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  padding:20px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px) scale(1.05);
+  box-shadow:0 0 20px #00ffff;
+}
+
+/* DEMO BOX */
+.demo-box{
+  margin:40px auto;
+  padding:20px;
+  max-width:600px;
+  background:rgba(0,255,255,0.05);
+  border:1px solid rgba(0,255,255,0.2);
+  border-radius:15px;
+  backdrop-filter:blur(10px);
+}
+
+.demo-box button{
+  margin:10px;
+  padding:10px 15px;
+  border:none;
+  border-radius:10px;
+  background:#00ffff;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.demo-box button:hover{
+  box-shadow:0 0 15px #00ffff;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .ai-section h2{
+    font-size:26px;
+  }
+}
+
+/* ================= CHAT SYSTEM FIX ================= */
+
+#chatBox{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:320px;
+  height:420px;
+  background:#0b1220;
+  border-radius:15px;
+  display:none;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid #333;
+  z-index:999;
+}
+
+#head{
+  background:#2563eb;
+  padding:10px;
+  text-align:center;
+  font-weight:bold;
+}
+
+#body{
+  flex:1;
+  overflow:auto;
+  padding:10px;
+  font-size:14px;
+}
+
+.msg{
+  margin:6px 0;
+  padding:8px;
+  border-radius:8px;
+}
+
+.user{background:#3b82f6;text-align:right;}
+.ai{background:#1f2937;}
+
+#inputBox{
+  display:flex;
+  border-top:1px solid #222;
+}
+
+#inputBox input{
+  flex:1;
+  padding:10px;
+  border:none;
+  outline:none;
+}
+
+#inputBox button{
+  background:#22c55e;
+  color:white;
+  border:none;
+  padding:10px;
+}
+
+/* FLOAT BUTTON */
+.fab{
+  position:fixed;
+  right:20px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  font-size:20px;
+  z-index:1000;
+}
+
+#aiBtn{bottom:20px;background:#22c55e;color:white;}
+#voiceBtn{bottom:85px;background:#3b82f6;color:white;}
+
+</style>
+
+<!-- ================= JS (WORKING FIX) ================= -->
+
+<script>
+
+function toggleChat(){
+
+  let box = document.getElementById("chatBox");
+
+  if(!box){
+    createChat();
+  }
+
+  let chat = document.getElementById("chatBox");
+  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+}
+
+/* CREATE CHAT */
+function createChat(){
+
+  let box = document.createElement("div");
+  box.id = "chatBox";
+
+  box.innerHTML = `
+    <div id="head">🤖 AI Assistant</div>
+    <div id="body"></div>
+
+    <div id="inputBox">
+      <input id="textInput" placeholder="Ask something...">
+      <button onclick="sendMsg()">Send</button>
+    </div>
+  `;
+
+  document.body.appendChild(box);
+}
+
+/* SEND MSG */
+function sendMsg(){
+
+  let input = document.getElementById("textInput");
+  let text = input.value.trim();
+  if(!text) return;
+
+  addMsg(text,"user");
+  input.value="";
+
+  setTimeout(()=>{
+    let reply = aiReply(text);
+    addMsg(reply,"ai");
+    speak(reply);
+  },500);
+}
+
+/* AI LOGIC */
+function aiReply(t){
+
+  t = t.toLowerCase();
+
+  if(t.includes("html")) return "HTML is structure of website 🧠";
+  if(t.includes("css")) return "CSS makes design beautiful 🎨";
+  if(t.includes("js")) return "JavaScript adds logic ⚡";
+  if(t.includes("hello")) return "Hello! I am your AI 🤖";
+
+  return "Ask me about HTML, CSS, JS 😄";
+}
+
+/* ADD MSG */
+function addMsg(text,type){
+
+  let body = document.getElementById("body");
+
+  let div = document.createElement("div");
+  div.className = "msg "+type;
+  div.innerText = text;
+
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+/* VOICE INPUT */
+function startVoice(){
+
+  let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if(!SpeechRecognition){
+    alert("Voice not supported");
+    return;
+  }
+
+  let rec = new SpeechRecognition();
+  rec.lang = "en-US";
+  rec.start();
+
+  rec.onresult = function(e){
+    let text = e.results[0][0].transcript;
+
+    addMsg(text,"user");
+
+    let reply = aiReply(text);
+    addMsg(reply,"ai");
+
+    speak(reply);
+  };
+}
+
+/* VOICE OUTPUT */
+function speak(text){
+  let speech = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(speech);
+}
+
+</script>
